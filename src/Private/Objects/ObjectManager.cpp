@@ -1,10 +1,6 @@
 #include <Objects/ObjectManager.h>
 
 
-ObjectManager* ObjectManager::_instance = nullptr;
-void ObjectManager::RegisterObject(IObject* obj)
-{
-}
 void ObjectManager::RemoveObject(IObject* obj)
 {
 }
@@ -22,6 +18,7 @@ void ObjectManager::RenderObjectsTo(sf::RenderWindow& window)
 }
 
 // SINGLETON 
+ObjectManager* ObjectManager::_instance = nullptr;
 ObjectManager* ObjectManager::Initialize()
 {
     if (_instance != nullptr) return _instance;

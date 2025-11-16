@@ -1,5 +1,6 @@
 #include "Application.h"
 
+#include <Core/Logger.h>
 #include <Objects/ObjectManager.h>
 
 void Application::Run()
@@ -43,18 +44,20 @@ void Application::Render()
 }
 
 // SINGLETON 
-Application* Application::_instance = nullptr;
+Application* Application::Instance = nullptr;
 Application* Application::Initialize(const Desc& desc)
 {
-    if (_instance != nullptr) return _instance;
+    if (Instance != nullptr) return Instance;
 
-    _instance = new Application(desc);
-    return _instance;
+    Instance = new Application(desc);
+    return Instance;
 }
 
 Application::Application(const Desc& desc)
 {
     _appName = desc.appName;
+
+	Logger::Initialize(Logger::ELogLevel::Error);
 
     // Initialize Window
     _window = Make_Unique<sf::RenderWindow>(sf::VideoMode(desc.windowSize.w, desc.windowSize.h), desc.appName);

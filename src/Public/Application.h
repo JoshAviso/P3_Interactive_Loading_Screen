@@ -27,8 +27,8 @@ private:
 // SINGLETON
 public:
 	static Application* Initialize(const Desc& desc);
+	static Application* Instance;
 private:
-	static Application* _instance;
 	explicit Application(const Desc& desc);
 	~Application();
 	Application(const Application&) = delete;

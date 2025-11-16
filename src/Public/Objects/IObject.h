@@ -12,6 +12,7 @@ public:
 	Vec2 Position;
 
 public:
+	virtual ~IObject() = default;
 	virtual void DrawTo(sf::RenderWindow& window) = 0;
 };
 

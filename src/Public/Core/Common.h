@@ -1,6 +1,9 @@
 #pragma once
 
+#include <cstdint>
+
 using uint = unsigned int;
+using uint8 = uint8_t;
 
 #include <vector>
 template <typename T>

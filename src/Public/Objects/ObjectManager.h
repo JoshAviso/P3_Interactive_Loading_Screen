@@ -2,13 +2,20 @@
 
 #include <Core/Common.h>
 #include <Objects/IObject.h>
+#include <Core/Logger.h>
 
 class ObjectManager
 {
 public:
-	void RegisterObject(IObject* obj);
-	void RemoveObject(IObject* obj);
-	IObject* FindObjectByName(const String& name);
+	template <typename TObject>
+	static void RegisterObject(TObject* obj){
+		static_assert(std::is_base_of<IObject, TObject>::value, "Pointer must be an object.");
+		_instance->_objects.push_back(Unique<IObject>(obj));
+		Logger::Log("Registered Object: " + obj->Name);
+	}
+
+	static void RemoveObject(IObject* obj);
+	static IObject* FindObjectByName(const String& name);
 
 private:
 	List<Unique<IObject>> _objects;
