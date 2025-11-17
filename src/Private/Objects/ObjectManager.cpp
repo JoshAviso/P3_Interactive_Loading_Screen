@@ -9,6 +9,14 @@ IObject* ObjectManager::FindObjectByName(const String& name)
     return nullptr;
 }
 
+void ObjectManager::Update(float deltaTime)
+{
+	for (int i = 0; i < _objects.size(); i++)
+	{
+		_objects[i]->Update(deltaTime);
+	}
+}
+
 void ObjectManager::RenderObjectsTo(sf::RenderWindow& window)
 {
 	for (int i = 0; i < _objects.size(); i++)

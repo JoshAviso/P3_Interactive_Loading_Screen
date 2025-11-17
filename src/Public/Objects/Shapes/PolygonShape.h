@@ -2,11 +2,11 @@
 
 #include <Objects/Shapes/IShape.h>
 
-class CircleShape : public IShape
+class PolygonShape : public IShape
 {
 public:
-	CircleShape(float radius) : IShape("Circle") {
-		_shape = new sf::CircleShape(radius);
+	PolygonShape(String name, uint8 sides, float radius) : IShape(name) {
+		_shape = new sf::CircleShape(radius, sides);
 		_shape->setOrigin(radius, radius);
 	}
 	void SetRadius(float radius) {

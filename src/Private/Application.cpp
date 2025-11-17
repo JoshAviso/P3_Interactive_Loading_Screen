@@ -32,7 +32,7 @@ void Application::Quit()
 
 void Application::Update(float deltaTime)
 {
-
+    ObjectManager::_instance->Update(deltaTime);
 }
 
 void Application::Render()
@@ -56,6 +56,7 @@ Application* Application::Initialize(const Desc& desc)
 Application::Application(const Desc& desc)
 {
     _appName = desc.appName;
+	_windowSize = desc.windowSize;
 
 	Logger::Initialize(Logger::ELogLevel::Error);
 

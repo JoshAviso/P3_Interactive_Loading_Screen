@@ -16,8 +16,12 @@ public:
 	void Run();
 	void Quit();
 
+public:
+	Vec2i WindowSize() const { return _windowSize; }
+
 private:
 	String _appName = "";
+	Vec2i _windowSize;
 	Unique<sf::RenderWindow> _window = nullptr;
 	bool shouldClose = false;
 

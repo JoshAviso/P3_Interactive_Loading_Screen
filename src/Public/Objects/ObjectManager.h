@@ -11,7 +11,6 @@ public:
 	static void RegisterObject(TObject* obj){
 		static_assert(std::is_base_of<IObject, TObject>::value, "Pointer must be an object.");
 		_instance->_objects.push_back(Unique<IObject>(obj));
-		Logger::Log("Registered Object: " + obj->Name);
 	}
 
 	static void RemoveObject(IObject* obj);
@@ -20,6 +19,7 @@ public:
 private:
 	List<Unique<IObject>> _objects;
 
+	void Update(float deltaTime);
 	void RenderObjectsTo(sf::RenderWindow& window);
 
 // SINGLETON

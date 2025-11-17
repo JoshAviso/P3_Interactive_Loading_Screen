@@ -14,6 +14,7 @@ protected:
 	sf::Shape* _shape = nullptr;
 
 public:
+	IShape(String name) : IObject(name) {}
 	void DrawTo(sf::RenderWindow& window) override;
 };
 
