@@ -41,6 +41,7 @@ void AudioSourceComponent::Stop()
 {
 	_music.stop();
 	_sound.stop();
+	_soundclipResource.reset();
 }
 
 bool AudioSourceComponent::SetMusic(String musicFilePath)
@@ -53,7 +54,7 @@ bool AudioSourceComponent::SetMusic(String musicFilePath)
 	}
 
 	_musicFilePath = musicFilePath;
-	_soundclipResource = nullptr;
+	_soundclipResource.reset();
 
 	return true;
 }
