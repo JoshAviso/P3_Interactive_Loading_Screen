@@ -1,10 +1,10 @@
 #include <Objects/ObjectManager.h>
 
 
-void ObjectManager::RemoveObject(IObject* obj)
+void ObjectManager::RemoveObject(Object* obj)
 {
 }
-IObject* ObjectManager::FindObjectByName(const String& name)
+Object* ObjectManager::FindObjectByName(const String& name)
 {
     return nullptr;
 }
@@ -13,7 +13,11 @@ void ObjectManager::Update(float deltaTime)
 {
 	for (int i = 0; i < _objects.size(); i++)
 	{
-		_objects[i]->Update(deltaTime);
+		List<IUpdateComponent*> updateComponents = _objects[i]->GetComponents<IUpdateComponent>();
+		for (int j = 0; j < updateComponents.size(); j++)
+		{
+			updateComponents[j]->Update(deltaTime);
+		}
 	}
 }
 
@@ -21,7 +25,11 @@ void ObjectManager::RenderObjectsTo(sf::RenderWindow& window)
 {
 	for (int i = 0; i < _objects.size(); i++)
 	{
-		_objects[i]->DrawTo(window);
+		List<IRenderer*> renderComponents = _objects[i]->GetComponents<IRenderer>();
+		for (int j = 0; j < renderComponents.size(); j++)
+		{
+			renderComponents[j]->Render(window);
+		}
 	}
 }
 

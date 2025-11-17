@@ -1,11 +1,11 @@
 #pragma once
 
-#include <Objects/Shapes/IShape.h>
+#include <Components/Renderers/ShapeRenderers/IShapeRenderer.h>
 
-class TriangleShape : public IShape
+class TriangleRenderer : public IShapeRenderer
 {
 public:
-	TriangleShape(float radius) : IShape("Triangle") {
+	TriangleRenderer(float radius) {
 		_shape = new sf::CircleShape(radius, 3);
 		_shape->setOrigin(radius, radius);
 	}

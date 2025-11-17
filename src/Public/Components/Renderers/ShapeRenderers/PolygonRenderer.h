@@ -1,11 +1,11 @@
 #pragma once
 
-#include <Objects/Shapes/IShape.h>
+#include <Components/Renderers/ShapeRenderers/IShapeRenderer.h>
 
-class PolygonShape : public IShape
+class PolygonRenderer : public IShapeRenderer
 {
 public:
-	PolygonShape(String name, uint8 sides, float radius) : IShape(name) {
+	PolygonRenderer(uint8 sides, float radius) {
 		_shape = new sf::CircleShape(radius, sides);
 		_shape->setOrigin(radius, radius);
 	}

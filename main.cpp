@@ -1,8 +1,9 @@
 
 #include <Application.h>
 #include <Objects/ObjectManager.h>
-#include <Objects/Shapes/RectangleShape.h>
-#include <Objects/Shapes/CircleShape.h>
+#include <Objects/Object.h>
+#include <Components/Renderers/ShapeRenderers/RectangleRenderer.h>
+#include <Components/Renderers/ShapeRenderers/CircleRenderer.h>
 
 int main()
 {
@@ -11,9 +12,10 @@ int main()
 		{800, 600} 
 	});
 
-	CircleShape* circle = new CircleShape(10.0f);
-	circle->Position = { 100.0f, 100.0f };
-	circle->Name = "MyCircle";
+	Object* circle = new Object("Circle");
+	circle->AddComponent(new RectangleRenderer(Vec2({ 50.0f, 100.f })));
+
+	circle->Position = { 400.0f, 300.0f };
 	ObjectManager::RegisterObject(circle);
 
 	Application::Instance->Run();

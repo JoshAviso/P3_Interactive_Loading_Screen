@@ -1,9 +1,9 @@
 #pragma once
 
-#include <Objects/IObject.h>
 #include <Core/Color.h>
+#include <Components/Renderers/IRenderer.h>
 
-class IShape : public IObject
+class IShapeRenderer : public IRenderer
 {
 public:
 	Color FillColor = Color::White();
@@ -14,7 +14,6 @@ protected:
 	sf::Shape* _shape = nullptr;
 
 public:
-	IShape(String name) : IObject(name) {}
-	void DrawTo(sf::RenderWindow& window) override;
+	void Render(sf::RenderWindow& window) override;
 };
 

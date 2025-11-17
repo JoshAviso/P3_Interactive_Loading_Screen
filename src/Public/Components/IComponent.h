@@ -1,9 +1,15 @@
 #pragma once
 
+class Object;
+
 class IComponent
 {
+protected:
+	Object* _owner = nullptr;
+
 public:
 	virtual ~IComponent() = default;
-	virtual void Update(float deltaTime) = 0;
+
+	friend class Object;
 };
 

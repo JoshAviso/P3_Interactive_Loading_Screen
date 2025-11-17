@@ -2,12 +2,12 @@
 
 void Logger::Log(ELogLevel level, const String & message) {
 	if (_instance == nullptr) return;
-	if (level > _instance->_logLevel) return;
+	if (level < _instance->_logLevel) return;
 	String prefix;
 	switch (level) {
-	case ELogLevel::Error:   prefix = "[ERROR]: "; break;
-	case ELogLevel::Warning: prefix = "[WARN]: "; break;
-	case ELogLevel::Info:    prefix = "[INFO]: "; break;
+	case ELogLevel::Error:   prefix = "\033[31m[ERROR]:\033[0m "; break;
+	case ELogLevel::Warning: prefix = "\033[33m[WARN]:\033[0m "; break;
+	case ELogLevel::Info:    prefix = "\033[36m[INFO]:\033[0m "; break;
 	}
 	std::cout << prefix << message << std::endl;
 };

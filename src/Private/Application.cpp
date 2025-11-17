@@ -2,6 +2,7 @@
 
 #include <Core/Logger.h>
 #include <Objects/ObjectManager.h>
+#include <Resources/ResourceManager.h>
 
 void Application::Run()
 {
@@ -65,6 +66,7 @@ Application::Application(const Desc& desc)
     
     // Manager Initializations
 	ObjectManager::Initialize();
+    ResourceManager::Initialize();
 }
 
 Application::~Application(){ }

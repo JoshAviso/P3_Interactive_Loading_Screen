@@ -1,23 +1,26 @@
 #pragma once
 
 #include <Core/Common.h>
-#include <Objects/IObject.h>
+#include <Objects/Object.h>
 #include <Core/Logger.h>
+
+#include <Components/Update/IUpdateComponent.h>
+#include <Components/Renderers/IRenderer.h>
 
 class ObjectManager
 {
 public:
 	template <typename TObject>
 	static void RegisterObject(TObject* obj){
-		static_assert(std::is_base_of<IObject, TObject>::value, "Pointer must be an object.");
-		_instance->_objects.push_back(Unique<IObject>(obj));
+		static_assert(std::is_base_of<Object, TObject>::value, "Pointer must be an object.");
+		_instance->_objects.push_back(Unique<Object>(obj));
 	}
 
-	static void RemoveObject(IObject* obj);
-	static IObject* FindObjectByName(const String& name);
+	static void RemoveObject(Object* obj);
+	static Object* FindObjectByName(const String& name);
 
 private:
-	List<Unique<IObject>> _objects;
+	List<Unique<Object>> _objects;
 
 	void Update(float deltaTime);
 	void RenderObjectsTo(sf::RenderWindow& window);

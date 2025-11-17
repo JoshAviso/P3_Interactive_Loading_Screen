@@ -1,12 +1,13 @@
-#include <Objects/Shapes/IShape.h>
+#include <Components/Renderers/ShapeRenderers/IShapeRenderer.h>
 
 #include <Core/Logger.h>
+#include <Objects/Object.h>
 
-void IShape::DrawTo(sf::RenderWindow& window)
+void IShapeRenderer::Render(sf::RenderWindow& window)
 {
-	_shape->setPosition(Position.x, Position.y);
-	_shape->setRotation(Rotation);
-	_shape->setScale(Scale.x, Scale.y);
+	_shape->setPosition(_owner->Position.x, _owner->Position.y);
+	_shape->setRotation(_owner->Rotation);
+	_shape->setScale(_owner->Scale.x, _owner->Scale.y);
 
 	_shape->setFillColor((sf::Color)FillColor);
 	_shape->setOutlineColor((sf::Color)OutlineColor);

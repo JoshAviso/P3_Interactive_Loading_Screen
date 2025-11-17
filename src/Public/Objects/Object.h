@@ -8,7 +8,7 @@
 
 #include <Components/IComponent.h>
 
-class IObject
+class Object
 {
 public:
 	String Name;
@@ -20,11 +20,14 @@ private:
 	List<Unique<IComponent>> _components;
 
 public:
-	virtual ~IObject() = default;
+	Object(String name) : Position({ 0.f, 0.f }), Rotation(0.f), Scale({ 1.f, 1.f }), Name(name) {}
+
+	virtual ~Object() = default;
 	template <typename TComponent>
 	TComponent* AddComponent(TComponent* component) {
 		static_assert(std::is_base_of<IComponent, TComponent>::value, "TComponent must inherit from IComponent");
 
+		component->_owner = this;
 		_components.push_back(Unique<TComponent>(component));
 
 		return component;
@@ -63,16 +66,6 @@ public:
 			});
 		if (it != _components.end()) {
 			_components.erase(it);
-		}
-	}
-
-protected:
-	IObject(String name) : Position({ 0.f, 0.f }), Rotation(0.f), Scale({1.f, 1.f}), Name(name) {}
-	virtual void DrawTo(sf::RenderWindow& window) = 0;
-	void Update(float deltaTime) {
-		for (int i = 0; i < _components.size(); i++)
-		{
-			_components[i]->Update(deltaTime);
 		}
 	}
 

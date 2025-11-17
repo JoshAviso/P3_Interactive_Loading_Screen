@@ -1,11 +1,11 @@
 #pragma once
 
-#include <Objects/Shapes/IShape.h>
+#include <Components/Renderers/ShapeRenderers/IShapeRenderer.h>
 
-class RectangleShape : public IShape
+class RectangleRenderer : public IShapeRenderer
 {
 public:
-	RectangleShape(Vec2 size) : IShape("Rectangle") {
+	RectangleRenderer(Vec2 size) {
 		_shape = new sf::RectangleShape(sf::Vector2f(size.x, size.y));
 		_shape->setOrigin(size.x / 2.f, size.y / 2.f);
 	}
