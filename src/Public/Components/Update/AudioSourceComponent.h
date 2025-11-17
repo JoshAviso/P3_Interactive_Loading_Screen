@@ -8,13 +8,14 @@
 
 #include <SFML/Audio.hpp>
 
-class AudioSourceComponent : IUpdateComponent
+class AudioSourceComponent : public IUpdateComponent
 {
 
 public:
 	AudioSourceComponent() = default;
 	AudioSourceComponent(String musicFilePath);
 	AudioSourceComponent(Shared<SoundClipResource> soundclip);
+	virtual ~AudioSourceComponent();
 
 public:
 	void Play();

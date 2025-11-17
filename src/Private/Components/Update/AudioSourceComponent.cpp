@@ -5,10 +5,20 @@
 
 AudioSourceComponent::AudioSourceComponent(String musicFilePath)
 {
+	if (!SetMusic(musicFilePath)) {
+		Logger::LogWarning("AudioSourceComponent failed to load music from file: " + musicFilePath);
+	}
 }
 
 AudioSourceComponent::AudioSourceComponent(Shared<SoundClipResource> soundclip)
 {
+	SetSoundClip(soundclip);
+}
+
+AudioSourceComponent::~AudioSourceComponent()
+{
+	_music.stop();
+	_sound.stop();
 }
 
 void AudioSourceComponent::Play()

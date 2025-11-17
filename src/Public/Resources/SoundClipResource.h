@@ -6,6 +6,7 @@
 
 class SoundClipResource : public IResource 
 {
+
 private:
 	sf::SoundBuffer _sound;
 
@@ -13,5 +14,6 @@ protected:
 	IResource* LoadFromFile(String path) override;
 
 	friend class AudioSourceComponent;
+	friend class ResourceManager;
 };
 
