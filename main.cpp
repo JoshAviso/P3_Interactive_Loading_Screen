@@ -18,29 +18,8 @@
 #include <Core/Logger.h>
 
 #include <Threading/WorkerTasks/LoadTextureTask.h>
-
-class SampleLoadMusicTask : public IWorkerTask
-{
-public:
-	Object* _obj;
-	SampleLoadMusicTask(Object* obj) : _obj(obj) {}
-	void DoWorkerTask(int id) override
-	{
-
-	}
-};
-
-class SampleLoadSoundTask : public IWorkerTask
-{
-public:
-	Object* _obj;
-	SampleLoadSoundTask(Object* obj) : _obj(obj) {}
-	void DoWorkerTask(int id) override
-	{
-
-	}
-};
-
+#include <Threading/WorkerTasks/LoadMusicTask.h>
+#include <Threading/WorkerTasks/LoadSoundClipTask.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -65,14 +44,10 @@ int main()
 	threadPool->StartScheduling();
 
 	threadPool->ScheduleTask(new LoadTextureTask("TestTex", "Assets/Images/TestImage1.png", 2000.f, circle, {100.f, 500.f}));
+	threadPool->ScheduleTask(new LoadSoundClipTask("TestClip", "Assets/Audio/TestSound1.wav", 4000.f, circle, true));
+	threadPool->ScheduleTask(new LoadMusicTask(circle, "Assets/Audio/TestMusic1.mp3", true, 6000.f));
+
 	threadPool->StopWhenCompleted = true;
-
-	// Resource Loading
-	//Shared<SoundClipResource> testSound = ResourceManager::LoadFromFile<SoundClipResource>("TestSound", "Assets/Audio/TestSound1.wav");
-
-	// Object Declarations
-	//circle->AddComponent(new AudioSourceComponent(testSound));
-	//circle->AddComponent(new AudioSourceComponent("Assets/Audio/TestMusic1.mp3"))->Play();
 
 	// Run The Application
 	Application::Instance->Run();
