@@ -17,6 +17,10 @@ using Dict = std::unordered_map<T, T2>;
 template <typename T, typename T2>
 using Map = std::map<T, T2>;
 
+#include <queue>
+template <typename T>
+using Queue = std::queue<T>;
+
 #include <memory>
 template <typename T>
 using Unique = std::unique_ptr<T>;
