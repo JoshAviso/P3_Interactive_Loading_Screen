@@ -12,11 +12,13 @@ int main()
 		{800, 600} 
 	});
 
+	// Object Declarations
 	Object* circle = new Object("Circle");
 	circle->AddComponent(new RectangleRenderer(Vec2({ 50.0f, 100.f })));
 
 	circle->Position = { 400.0f, 300.0f };
 	ObjectManager::RegisterObject(circle);
 
+	// Run The Application
 	Application::Instance->Run();
 }
