@@ -3,7 +3,7 @@
 #include <Core/Common.h>
 #include <Threading/IThread.h>
 #include <Threading/WorkerThread.h>
-#include <Threading/IWorkerTaskFinishedCallback.h>
+#include <Threading/IThreadFinishedCallback.h>
 #include <Threading/WorkerTasks/IWorkerTask.h>
 
 class ThreadPool : public IThread, public IThreadFinishedCallback

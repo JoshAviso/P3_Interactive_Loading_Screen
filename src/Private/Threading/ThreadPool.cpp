@@ -1,5 +1,7 @@
 #include <Threading/ThreadPool.h>
 
+#include <Core/Logger.h>
+
 ThreadPool::ThreadPool(uint threadCount, IThreadFinishedCallback* onFinish) 
 	: _workerCount(threadCount), _onFinishCallback(onFinish)
 {
@@ -48,7 +50,7 @@ void ThreadPool::Run()
 			}
 		}
 		// Once StopWhenCompleted is true and there are no pending tasks, stop the pool and call the finish callback
-		else if (StopWhenCompleted) {
+		else if (StopWhenCompleted && _activeThreads.empty()) {
 			_isRunning = false;
 			if (_onFinishCallback != nullptr) {
 				_onFinishCallback->OnThreadFinished(-1);
