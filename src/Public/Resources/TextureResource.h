@@ -9,9 +9,10 @@ class TextureResource : public IResource
 private:
 	sf::Texture _texture;
 
-private:
+protected:
 	IResource* LoadFromFile(String path) override;
 
 	friend class SpriteRenderer;
+	friend class ResourceManager;
 };
 

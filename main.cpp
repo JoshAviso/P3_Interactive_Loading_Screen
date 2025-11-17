@@ -2,8 +2,11 @@
 #include <Application.h>
 #include <Objects/ObjectManager.h>
 #include <Objects/Object.h>
+#include <Resources/ResourceManager.h>
+#include <Resources/TextureResource.h>
 #include <Components/Renderers/ShapeRenderers/RectangleRenderer.h>
 #include <Components/Renderers/ShapeRenderers/CircleRenderer.h>
+#include <Components/Renderers/SpriteRenderer.h>
 
 int main()
 {
@@ -12,9 +15,13 @@ int main()
 		{800, 600} 
 	});
 
+	// Resource Loading
+	Shared<TextureResource> testTex = ResourceManager::LoadFromFile<TextureResource>("TestTexture", "Assets/Images/TestImage1.png");
+
 	// Object Declarations
 	Object* circle = new Object("Circle");
-	circle->AddComponent(new RectangleRenderer(Vec2({ 50.0f, 100.f })));
+	circle->AddComponent(new SpriteRenderer(testTex))->Size = {200.f, 100.f};
+	//circle->AddComponent(new RectangleRenderer(Vec2({ 50.0f, 100.f })));
 
 	circle->Position = { 400.0f, 300.0f };
 	ObjectManager::RegisterObject(circle);

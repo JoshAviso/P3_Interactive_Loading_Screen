@@ -9,14 +9,18 @@
 
 class SpriteRenderer : public IRenderer
 {
+public:
+	Vec2 Size;
+
 private:
 	sf::Sprite _sprite;
+	Shared<TextureResource> _texture;
 
 protected:
 	void Render(sf::RenderWindow& window) override {
 		_sprite.setPosition(_owner->Position.x, _owner->Position.y);
 		_sprite.setRotation(_owner->Rotation);
-		_sprite.setScale(_owner->Scale.x, _owner->Scale.y);
+		_sprite.setScale(_owner->Scale.x * (Size.x / _texture->_texture.getSize().x), _owner->Scale.y * (Size.y / _texture->_texture.getSize().y));
 		window.draw(_sprite);
 	};
 
@@ -25,9 +29,15 @@ public:
 	SpriteRenderer(Shared<TextureResource>& texture) {
 		SetTexture(texture);
 	}
-	void SetTexture(Shared<TextureResource>& texture) {
+	void SetTexture(Shared<TextureResource>& texture, bool resize = true) {
+		if (texture == nullptr) return;
 		_sprite.setTexture(texture->_texture);
-		_sprite.setOrigin(texture->_texture.getSize().x / 2.f, texture->_texture.getSize().y / 2.f);
+		_texture = texture;
+
+		Vec2 size = { (float)texture->_texture.getSize().x, (float)texture->_texture.getSize().y };
+		_sprite.setOrigin(size.x / 2.f, size.y / 2.f);
+
+		if (resize) Size = size;
 	}
 };
 
