@@ -12,6 +12,7 @@ class Object
 {
 public:
 	String Name;
+	bool Enabled = true;
 	Vec2 Position;
 	float Rotation;
 	Vec2 Scale;

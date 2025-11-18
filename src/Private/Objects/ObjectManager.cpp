@@ -26,6 +26,7 @@ void ObjectManager::Update(float deltaTime)
 {
 	for (int i = 0; i < _objects.size(); i++)
 	{
+		if (!_objects[i]->Enabled) continue;
 		List<IUpdateComponent*> updateComponents = _objects[i]->GetComponents<IUpdateComponent>();
 		for (int j = 0; j < updateComponents.size(); j++)
 		{
@@ -39,6 +40,7 @@ void ObjectManager::RenderObjectsTo(sf::RenderWindow& window)
 	List<IRenderer*> renderers{};
 	for (int i = 0; i < _objects.size(); i++)
 	{
+		if (!_objects[i]->Enabled) continue;
 		List<IRenderer*> renderComponents = _objects[i]->GetComponents<IRenderer>();
 		for (int j = 0; j < renderComponents.size(); j++)
 		{
