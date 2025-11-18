@@ -6,11 +6,13 @@
 #include <Resources/TextureResource.h>
 
 #include <SFML/Graphics.hpp>
+#include <Core/Color.h>
 
 class SpriteRenderer : public IRenderer
 {
 public:
 	Vec2 Size;
+	Color Color = Color::White();
 
 private:
 	sf::Sprite _sprite;
@@ -18,6 +20,7 @@ private:
 
 protected:
 	void Render(sf::RenderWindow& window) override {
+		_sprite.setColor(Color);
 		_sprite.setPosition(_owner->Position.x, _owner->Position.y);
 		_sprite.setRotation(_owner->Rotation);
 		_sprite.setScale(_owner->Scale.x * (Size.x / _texture->_texture.getSize().x), _owner->Scale.y * (Size.y / _texture->_texture.getSize().y));

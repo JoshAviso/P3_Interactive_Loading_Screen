@@ -6,16 +6,17 @@
 class Color {
 public:
     union {
-        struct { uint8 r, g, b, a; };
-        uint8 data[4];
+        struct { float r, g, b, a; };
+        struct { float R, G, B, A; };
+        float data[4];
     };
-    constexpr Color() noexcept : r(0), g(0), b(0), a(255) {}
-    constexpr Color(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha = 255) noexcept
+    constexpr Color() noexcept : r(0), g(0), b(0), a(1.f) {}
+    constexpr Color(float red, float green, float blue, float alpha = 1.f) noexcept
         : r(red), g(green), b(blue), a(alpha) {
     }
 
     operator sf::Color() const noexcept {
-        return sf::Color(r, g, b, a);
+        return sf::Color((sf::Uint32)(r * 255), (sf::Uint32)(g * 255), (sf::Uint32)(b * 255), (sf::Uint32)(a * 255));
     }
     Color& operator=(const Color& other) {
         r = other.r;
@@ -30,12 +31,20 @@ public:
     bool operator!=(const Color& other) const noexcept {
         return !(*this == other);
     }
+	static Color Lerp(const Color& first, const Color& second, float delta) {
+        Color color;
+        color.r = static_cast<uint8>(first.r + (second.r - first.r) * delta);
+		color.g = static_cast<uint8>(first.g + (second.g - first.g) * delta);
+		color.b = static_cast<uint8>(first.b + (second.b - first.b) * delta);
+		color.a = static_cast<uint8>(first.a + (second.a - first.a) * delta);
+		return color;
+	}
 
     // Predefined Colors
-    static const Color& White()     { static const Color white  (255, 255, 255, 255);   return white; };
-    static const Color& Black()     { static const Color black  (0, 0, 0, 255);         return black; };
-    static const Color& Red()       { static const Color red    (255, 0, 0, 255);       return red; };
-    static const Color& Green()     { static const Color green  (0, 255, 0, 255);       return green; };
-    static const Color& Blue()      { static const Color blue   (0, 0, 255, 255);       return blue; };
-    static const Color& Yellow()    { static const Color yellow (255, 255, 0, 255);     return yellow; }
+    static const Color& White()     { static const Color white  (1.f, 1.f, 1.f, 1.f);   return white; };
+    static const Color& Black()     { static const Color black  (0.f, 0.f, 0.f, 1.f);         return black; };
+    static const Color& Red()       { static const Color red    (1.f, 0.f, 0.f, 1.f);       return red; };
+    static const Color& Green()     { static const Color green  (0.f, 1.f, 0.f, 1.f);       return green; };
+    static const Color& Blue()      { static const Color blue   (0.f, 0.f, 1.f, 1.f);       return blue; };
+    static const Color& Yellow()    { static const Color yellow (1.f, 1.f, 0.f, 1.f);     return yellow; }
 };
