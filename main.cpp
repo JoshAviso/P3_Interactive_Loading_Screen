@@ -3,15 +3,7 @@
 #include <Objects/ObjectManager.h>
 #include <Objects/Object.h>
 #include <Resources/ResourceManager.h>
-#include <Resources/TextureResource.h>
-#include <Components/Renderers/ShapeRenderers/RectangleRenderer.h>
-#include <Components/Renderers/ShapeRenderers/CircleRenderer.h>
-#include <Components/Renderers/SpriteRenderer.h>
 
-#include <Components/Update/AudioSourceComponent.h>
-#include <Resources/SoundClipResource.h>
-
-#include <Threading/WorkerTasks/IWorkerTask.h>
 #include <Threading/ThreadPool.h>
 #include <Threading/IThreadFinishedCallback.h>
 
@@ -20,6 +12,9 @@
 #include <Threading/WorkerTasks/LoadTextureTask.h>
 #include <Threading/WorkerTasks/LoadMusicTask.h>
 #include <Threading/WorkerTasks/LoadSoundClipTask.h>
+
+#include <Components/Renderers/TextRenderer.h>
+#include <Resources/FontResource.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -38,6 +33,10 @@ int main()
 
 	Object* circle = new Object("Circle");
 	circle->Position = { 400.0f, 300.0f };
+	TextRenderer* text = circle->AddComponent(new TextRenderer(ResourceManager::LoadFromFile<FontResource>("DefaultFont", "Assets/Fonts/arial.ttf")));
+	text->Text = "Loading Resources...";
+	text->Alignment = { 0.5f, 0.5f };
+
 	ObjectManager::RegisterObject(circle);
 
 	ThreadPool* threadPool = new ThreadPool(2, new SamplePoolFinishedTask());

@@ -60,6 +60,12 @@
     <ClCompile Include="src\Private\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Private\Resources\FontResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Private\Components\Renderers\TextRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\CircleRenderer.h">
@@ -459,6 +465,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="thirdparty\include\SFML\Window.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Resources\FontResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Components\Renderers\TextRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

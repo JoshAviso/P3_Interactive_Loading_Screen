@@ -1,9 +1,10 @@
-﻿main.obj : warning LNK4099: PDB '' was not found with 'main.obj' or at ''; linking object as if no debug info
+﻿  main.cpp
   P3_Interactive_Loading_Screen.vcxproj -> C:\Users\Josh\repos\P3_Interactive_Loading_Screen\x64\Debug\P3_Interactive_Loading_Screen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
   0 File(s) copied
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Audio\TestMusic1.mp3
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Audio\TestSound1.wav
+  C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Fonts\arial.ttf
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\TestImage1.png
-  3 File(s) copied
+  4 File(s) copied

@@ -1,1 +1,1 @@
-#include <Resources/TextureResource.h>
+#include <Components/Renderers/SpriteRenderer.h>

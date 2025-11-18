@@ -146,10 +146,12 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Private\Application.cpp" />
     <ClCompile Include="src\Private\Components\Renderers\SpriteRenderer.cpp" />
+    <ClCompile Include="src\Private\Components\Renderers\TextRenderer.cpp" />
     <ClCompile Include="src\Private\Components\Update\AudioSourceComponent.cpp" />
     <ClCompile Include="src\Private\Core\Logger.cpp" />
     <ClCompile Include="src\Private\Objects\ObjectManager.cpp" />
     <ClCompile Include="src\Private\Objects\Shapes\IShape.cpp" />
+    <ClCompile Include="src\Private\Resources\FontResource.cpp" />
     <ClCompile Include="src\Private\Resources\ResourceManager.cpp" />
     <ClCompile Include="src\Private\Resources\SoundClipResource.cpp" />
     <ClCompile Include="src\Private\Resources\TextureResource.cpp" />
@@ -167,6 +169,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\IShapeRenderer.h" />
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\PolygonRenderer.h" />
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\RectangleRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\TextRenderer.h" />
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\TriangleRenderer.h" />
     <ClInclude Include="src\Public\Components\Renderers\SpriteRenderer.h" />
     <ClInclude Include="src\Public\Components\Update\AudioSourceComponent.h" />
@@ -181,6 +184,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClInclude Include="src\Public\Math\Vec2i.h" />
     <ClInclude Include="src\Public\Objects\Object.h" />
     <ClInclude Include="src\Public\Objects\ObjectManager.h" />
+    <ClInclude Include="src\Public\Resources\FontResource.h" />
     <ClInclude Include="src\Public\Resources\IResource.h" />
     <ClInclude Include="src\Public\Resources\ResourceManager.h" />
     <ClInclude Include="src\Public\Resources\SoundClipResource.h" />
