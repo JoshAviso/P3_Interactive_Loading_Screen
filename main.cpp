@@ -15,6 +15,7 @@
 
 #include <Components/Renderers/TextRenderer.h>
 #include <Resources/FontResource.h>
+#include <Components/Update/FPSCounterUpdater.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -31,9 +32,21 @@ int main()
 		{1280, 720} 
 	});
 
+	Shared<FontResource> arialFont = ResourceManager::LoadFromFile<FontResource>("DefaultFont", "Assets/Fonts/arial.ttf");
+
+	// FPS Counter
+	Object* fpsCounter = new Object("FPSCounter");
+	ObjectManager::RegisterObject(fpsCounter);
+	fpsCounter->Position = { 10.0f, 10.0f };
+	TextRenderer* fpsText = fpsCounter->AddComponent(new TextRenderer(arialFont));
+	fpsText->FontSize = 24;
+	fpsText->RenderLayer = 999;
+	fpsText->Text = "0fps";
+	fpsCounter->AddComponent(new FPSCounterUpdater(0.5f));
+
 	Object* circle = new Object("Circle");
 	circle->Position = { 400.0f, 300.0f };
-	TextRenderer* text = circle->AddComponent(new TextRenderer(ResourceManager::LoadFromFile<FontResource>("DefaultFont", "Assets/Fonts/arial.ttf")));
+	TextRenderer* text = circle->AddComponent(new TextRenderer(arialFont));
 	text->Text = "Loading Resources...";
 	text->Alignment = { 0.5f, 0.5f };
 	text->RenderLayer = 0;
