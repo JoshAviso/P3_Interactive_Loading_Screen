@@ -74,14 +74,17 @@ int main()
 	ObjectManager::RegisterObject(bg2);
 	ObjectManager::RegisterObject(chara2);
 
+	bg2->Enabled = false;
+	chara2->Enabled = false;
+
 	ThreadPool* threadPool = new ThreadPool(2, new SamplePoolFinishedTask());
 	threadPool->StartScheduling();
 
 	threadPool->ScheduleTask(new LoadTextureTask("BG1Tex", "Assets/Images/BG5.jpg", 0.0f, bg1, { 1000.f, 600.f }));
 	threadPool->ScheduleTask(new LoadTextureTask("Chara1Tex", "Assets/Images/motoko.png", 0.0f, chara1, { 513.f, 600.f }));
 
-	threadPool->ScheduleTask(new LoadTextureTask("BG2Tex", "Assets/Images/BG4.jpg", 2000.0f, bg2, { 1000.f, 600.f }));
-	threadPool->ScheduleTask(new LoadTextureTask("Chara2Tex", "Assets/Images/spike.png", 2000.0f, chara2, { 513.f, 525.f }));
+	threadPool->ScheduleTask(new LoadTextureTask("BG2Tex", "Assets/Images/BG4.jpg", 0.0f, bg2, { 1000.f, 600.f }));
+	threadPool->ScheduleTask(new LoadTextureTask("Chara2Tex", "Assets/Images/spike.png", 0.0f, chara2, { 513.f, 525.f }));
 
 	threadPool->ScheduleTask(new LoadTextureTask("TestTex", "Assets/Images/TestImage1.png", 2000.f, circle, {100.f, 500.f}));
 	threadPool->ScheduleTask(new LoadSoundClipTask("TestClip", "Assets/Audio/TestSound1.wav", 4000.f, circle, true));
