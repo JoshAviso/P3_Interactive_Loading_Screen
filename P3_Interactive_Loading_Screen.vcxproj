@@ -149,6 +149,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClCompile Include="src\Private\Components\Renderers\SpriteRenderer.cpp" />
     <ClCompile Include="src\Private\Components\Renderers\TextRenderer.cpp" />
     <ClCompile Include="src\Private\Components\Update\AudioSourceComponent.cpp" />
+    <ClCompile Include="src\Private\Components\Update\ImagePanning.cpp" />
     <ClCompile Include="src\Private\Core\Logger.cpp" />
     <ClCompile Include="src\Private\Objects\ObjectManager.cpp" />
     <ClCompile Include="src\Private\Objects\Shapes\IShape.cpp" />
@@ -175,6 +176,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\TriangleRenderer.h" />
     <ClInclude Include="src\Public\Components\Renderers\SpriteRenderer.h" />
     <ClInclude Include="src\Public\Components\Update\AudioSourceComponent.h" />
+    <ClInclude Include="src\Public\Components\Update\ImagePanning.h" />
     <ClInclude Include="src\Public\Components\Update\IUpdateComponent.h" />
     <ClInclude Include="src\Public\Core\Color.h" />
     <ClInclude Include="src\Public\Core\Common.h" />

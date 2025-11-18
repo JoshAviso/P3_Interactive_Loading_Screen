@@ -16,6 +16,7 @@
 #include <Components/Renderers/TextRenderer.h>
 #include <Resources/FontResource.h>
 #include <Components/Update/FPSCounterUpdater.h>
+#include <Components/Update/ImagePanning.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -53,15 +54,19 @@ int main()
 
 	Object* bg1 = new Object("BG1");
 	bg1->Position = {650.0f, 350.0f};
+	bg1->AddComponent(new ImagePanning(0.08f, 0));
 
 	Object* chara1 = new Object("CHARA1");
 	chara1->Position = { 640.0f, 440.0f };
+	chara1->AddComponent(new ImagePanning(0.08f, 0));
 
 	Object* bg2 = new Object("BG2");
 	bg2->Position = { 650.0f, 350.0f };
+	bg2->AddComponent(new ImagePanning(-0.08f, 0));
 
 	Object* chara2 = new Object("CHARA2");
 	chara2->Position = { 640.0f, 440.0f };
+	chara2->AddComponent(new ImagePanning(-0.08f, 0));
 
 	ObjectManager::RegisterObject(circle);
 	ObjectManager::RegisterObject(bg1);
@@ -75,14 +80,13 @@ int main()
 	threadPool->ScheduleTask(new LoadTextureTask("BG1Tex", "Assets/Images/BG5.jpg", 0.0f, bg1, { 1000.f, 600.f }));
 	threadPool->ScheduleTask(new LoadTextureTask("Chara1Tex", "Assets/Images/motoko.png", 0.0f, chara1, { 513.f, 600.f }));
 
-	threadPool->ScheduleTask(new LoadTextureTask("BG2Tex", "Assets/Images/BG4.jpg", 3000.0f, bg2, { 1000.f, 600.f }));
-	threadPool->ScheduleTask(new LoadTextureTask("Chara2Tex", "Assets/Images/spike.png", 3000.0f, chara2, { 513.f, 525.f }));
+	threadPool->ScheduleTask(new LoadTextureTask("BG2Tex", "Assets/Images/BG4.jpg", 2000.0f, bg2, { 1000.f, 600.f }));
+	threadPool->ScheduleTask(new LoadTextureTask("Chara2Tex", "Assets/Images/spike.png", 2000.0f, chara2, { 513.f, 525.f }));
 
 	threadPool->ScheduleTask(new LoadTextureTask("TestTex", "Assets/Images/TestImage1.png", 2000.f, circle, {100.f, 500.f}));
 	threadPool->ScheduleTask(new LoadSoundClipTask("TestClip", "Assets/Audio/TestSound1.wav", 4000.f, circle, true));
 	threadPool->ScheduleTask(new LoadMusicTask(circle, "Assets/Audio/TestMusic1.mp3", true, 6000.f));
 	
-
 	threadPool->StopWhenCompleted = true;
 
 	// Run The Application

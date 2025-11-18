@@ -69,6 +69,9 @@
     <ClCompile Include="src\Private\Components\Update\FPSCounterUpdater.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Private\Components\Update\ImagePanning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\CircleRenderer.h">
@@ -477,6 +480,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Public\Components\Update\FPSCounterUpdater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Components\Update\ImagePanning.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
