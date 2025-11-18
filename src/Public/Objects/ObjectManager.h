@@ -11,9 +11,11 @@ class ObjectManager
 {
 public:
 	template <typename TObject>
-	static void RegisterObject(TObject* obj){
+	static TObject* RegisterObject(TObject* obj){
 		static_assert(std::is_base_of<Object, TObject>::value, "Pointer must be an object.");
 		_instance->_objects.push_back(Unique<Object>(obj));
+
+		return obj;
 	}
 
 	static void RemoveObject(Object* obj);

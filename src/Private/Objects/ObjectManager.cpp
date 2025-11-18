@@ -4,9 +4,21 @@
 
 void ObjectManager::RemoveObject(Object* obj)
 {
+	auto it = std::find_if(_instance->_objects.begin(), _instance->_objects.end(),
+		[obj](const Unique<Object>& ptr) {
+			return ptr.get() == obj;
+		});
+	if (it != _instance->_objects.end()) {
+		_instance->_objects.erase(it);
+	}
 }
 Object* ObjectManager::FindObjectByName(const String& name)
 {
+	for (int i = 0; i < _instance->_objects.size(); i++) {
+		if (_instance->_objects[i]->Name == name) {
+			return _instance->_objects[i].get();
+		}
+	}
     return nullptr;
 }
 
