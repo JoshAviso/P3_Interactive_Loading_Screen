@@ -63,7 +63,8 @@ Application::Application(const Desc& desc)
 
     // Initialize Window
     _window = Make_Unique<sf::RenderWindow>(sf::VideoMode(desc.windowSize.w, desc.windowSize.h), desc.appName);
-    
+	if(desc.fpsCap >= 0) _window->setFramerateLimit(desc.fpsCap);
+
     // Manager Initializations
 	ObjectManager::Initialize();
     ResourceManager::Initialize();

@@ -29,14 +29,14 @@ int main()
 {
 	Application::Initialize({
 		"P3 Interactive Loading Screen | Aviso & Taylan",
-		{1280, 720} 
+		{1280, 720},
+		160
 	});
 
 	Shared<FontResource> arialFont = ResourceManager::LoadFromFile<FontResource>("DefaultFont", "Assets/Fonts/arial.ttf");
 
 	// FPS Counter
-	Object* fpsCounter = new Object("FPSCounter");
-	ObjectManager::RegisterObject(fpsCounter);
+	Object* fpsCounter = ObjectManager::RegisterObject(new Object("FPSCounter"));
 	fpsCounter->Position = { 10.0f, 10.0f };
 	TextRenderer* fpsText = fpsCounter->AddComponent(new TextRenderer(arialFont));
 	fpsText->FontSize = 24;

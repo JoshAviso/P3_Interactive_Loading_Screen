@@ -11,6 +11,7 @@ public:
 	struct Desc {
 		String appName;
 		Vec2i windowSize;
+		int fpsCap;
 	};
 
 	void Run();
