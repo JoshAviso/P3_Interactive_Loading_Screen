@@ -7,6 +7,7 @@
 class IRenderer : public IComponent
 {
 public:
+	int RenderLayer = 0;
 	virtual ~IRenderer() = default;
 
 protected:

@@ -36,6 +36,7 @@ int main()
 	TextRenderer* text = circle->AddComponent(new TextRenderer(ResourceManager::LoadFromFile<FontResource>("DefaultFont", "Assets/Fonts/arial.ttf")));
 	text->Text = "Loading Resources...";
 	text->Alignment = { 0.5f, 0.5f };
+	text->RenderLayer = 0;
 
 	ObjectManager::RegisterObject(circle);
 

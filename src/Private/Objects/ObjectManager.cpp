@@ -1,5 +1,6 @@
 #include <Objects/ObjectManager.h>
 
+#include <algorithm>
 
 void ObjectManager::RemoveObject(Object* obj)
 {
@@ -23,13 +24,23 @@ void ObjectManager::Update(float deltaTime)
 
 void ObjectManager::RenderObjectsTo(sf::RenderWindow& window)
 {
+	List<IRenderer*> renderers{};
 	for (int i = 0; i < _objects.size(); i++)
 	{
 		List<IRenderer*> renderComponents = _objects[i]->GetComponents<IRenderer>();
 		for (int j = 0; j < renderComponents.size(); j++)
 		{
-			renderComponents[j]->Render(window);
+			renderers.push_back(renderComponents[j]);
 		}
+	}
+
+	std::stable_sort(renderers.begin(), renderers.end(), 
+		[](IRenderer* a, IRenderer* b) {
+			return a->RenderLayer < b->RenderLayer;
+		});
+
+	for (int i = 0; i < renderers.size(); i++) {
+		renderers[i]->Render(window);
 	}
 }
 
