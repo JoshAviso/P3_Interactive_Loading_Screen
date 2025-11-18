@@ -112,8 +112,12 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)/thirdparty/lib/SFML;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /D "$(ProjectDir)thirdparty\bin\SFML\*.dll" "$(OutDir)"
+xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -131,11 +135,175 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)/thirdparty/lib/SFML;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /D "$(ProjectDir)thirdparty\bin\SFML\*.dll" "$(OutDir)"
+xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Private\Application.cpp" />
+    <ClCompile Include="src\Private\Components\Renderers\SpriteRenderer.cpp" />
+    <ClCompile Include="src\Private\Components\Update\AudioSourceComponent.cpp" />
+    <ClCompile Include="src\Private\Core\Logger.cpp" />
+    <ClCompile Include="src\Private\Objects\ObjectManager.cpp" />
+    <ClCompile Include="src\Private\Objects\Shapes\IShape.cpp" />
+    <ClCompile Include="src\Private\Resources\ResourceManager.cpp" />
+    <ClCompile Include="src\Private\Resources\SoundClipResource.cpp" />
+    <ClCompile Include="src\Private\Resources\TextureResource.cpp" />
+    <ClCompile Include="src\Private\Threading\ThreadPool.cpp" />
+    <ClCompile Include="src\Private\Threading\WorkerTasks\LoadMusicTask.cpp" />
+    <ClCompile Include="src\Private\Threading\WorkerTasks\LoadSoundClipTask.cpp" />
+    <ClCompile Include="src\Private\Threading\WorkerTasks\LoadTextureTask.cpp" />
+    <ClCompile Include="src\Private\Threading\WorkerThread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Public\Application.h" />
+    <ClInclude Include="src\Public\Components\IComponent.h" />
+    <ClInclude Include="src\Public\Components\Renderers\IRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\CircleRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\IShapeRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\PolygonRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\RectangleRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\TriangleRenderer.h" />
+    <ClInclude Include="src\Public\Components\Renderers\SpriteRenderer.h" />
+    <ClInclude Include="src\Public\Components\Update\AudioSourceComponent.h" />
+    <ClInclude Include="src\Public\Components\Update\IUpdateComponent.h" />
+    <ClInclude Include="src\Public\Core\Color.h" />
+    <ClInclude Include="src\Public\Core\Common.h" />
+    <ClInclude Include="src\Public\Core\Logger.h" />
+    <ClInclude Include="src\Public\Core\String.h" />
+    <ClInclude Include="src\Public\Math\Constants.h" />
+    <ClInclude Include="src\Public\Math\Rect.h" />
+    <ClInclude Include="src\Public\Math\Vec2.h" />
+    <ClInclude Include="src\Public\Math\Vec2i.h" />
+    <ClInclude Include="src\Public\Objects\Object.h" />
+    <ClInclude Include="src\Public\Objects\ObjectManager.h" />
+    <ClInclude Include="src\Public\Resources\IResource.h" />
+    <ClInclude Include="src\Public\Resources\ResourceManager.h" />
+    <ClInclude Include="src\Public\Resources\SoundClipResource.h" />
+    <ClInclude Include="src\Public\Resources\TextureResource.h" />
+    <ClInclude Include="src\Public\Threading\IThread.h" />
+    <ClInclude Include="src\Public\Threading\IThreadFinishedCallback.h" />
+    <ClInclude Include="src\Public\Threading\ThreadPool.h" />
+    <ClInclude Include="src\Public\Threading\WorkerTasks\IWorkerTask.h" />
+    <ClInclude Include="src\Public\Threading\WorkerTasks\LoadMusicTask.h" />
+    <ClInclude Include="src\Public\Threading\WorkerTasks\LoadSoundClipTask.h" />
+    <ClInclude Include="src\Public\Threading\WorkerTasks\LoadTextureTask.h" />
+    <ClInclude Include="src\Public\Threading\WorkerThread.h" />
+    <ClInclude Include="thirdparty\include\SFML\Audio.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\AlResource.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\Export.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\InputSoundFile.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\Listener.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\Music.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\OutputSoundFile.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\Sound.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundFileFactory.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundFileReader.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundFileWriter.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundSource.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Audio\SoundStream.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Config.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\GpuPreference.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\CircleShape.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Drawable.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Glsl.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Shape.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Sprite.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Text.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\VertexArray.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\VertexBuffer.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Main.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\Export.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\Ftp.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\Http.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\IpAddress.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\Packet.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\Socket.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\SocketHandle.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\SocketSelector.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\TcpListener.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\TcpSocket.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Network\UdpSocket.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\OpenGL.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Clock.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Err.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Export.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\FileInputStream.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\InputStream.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Lock.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\MemoryInputStream.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Mutex.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\NativeActivity.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\NonCopyable.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Sleep.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\String.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Thread.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\ThreadLocal.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\ThreadLocalPtr.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Time.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Utf.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Vector2.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\System\Vector3.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Clipboard.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Context.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Cursor.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Event.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Export.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Sensor.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Touch.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Vulkan.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\Window.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\WindowBase.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="thirdparty\include\SFML\Window\WindowStyle.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="thirdparty\include\SFML\Audio\SoundFileFactory.inl" />
+    <None Include="thirdparty\include\SFML\Graphics\Glsl.inl" />
+    <None Include="thirdparty\include\SFML\Graphics\Rect.inl" />
+    <None Include="thirdparty\include\SFML\System\String.inl" />
+    <None Include="thirdparty\include\SFML\System\Thread.inl" />
+    <None Include="thirdparty\include\SFML\System\ThreadLocalPtr.inl" />
+    <None Include="thirdparty\include\SFML\System\Utf.inl" />
+    <None Include="thirdparty\include\SFML\System\Vector2.inl" />
+    <None Include="thirdparty\include\SFML\System\Vector3.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
