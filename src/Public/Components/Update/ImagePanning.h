@@ -16,6 +16,6 @@ public:
 private:
 	float elapsedTime = 0.0f;
 	Vec2 origPos = {0,0};
-	Object* nextBG = nullptr;
-	Object* nextChara = nullptr;
+	Object* nextBG;
+	Object* nextChara;
 };

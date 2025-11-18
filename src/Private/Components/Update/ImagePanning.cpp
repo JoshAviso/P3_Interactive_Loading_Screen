@@ -13,16 +13,18 @@ ImagePanning::ImagePanning(float panX, float panY)
 
 void ImagePanning::Update(float deltaTime)
 {
-	//Get original position to reset to, putting it in constructor no worky
+	//Get original position to reset to
+	//putting it in constructor no worky, i think cuz _owner not assigned yet
 	if (origPos.x == 0 && origPos.y == 0)
 		origPos = _owner->Position;
 
 	elapsedTime += deltaTime;
 
-	//Pan
+	//Pan for 3 secs
 	if(elapsedTime < 3.0f)
 		_owner->Position += {_panX, _panY};
 
+	//Done panning, enable next obj
 	else if (_owner->Name == "BG1" && elapsedTime > 3.0f)
 	{
 		nextBG = ObjectManager::FindObjectByName("BG2");
@@ -30,7 +32,7 @@ void ImagePanning::Update(float deltaTime)
 		nextBG->Enabled = true;
 
 		elapsedTime = 0;
-		_owner->Position = origPos;
+		_owner->Position = origPos; //so it doesnt go off screen
 		_owner->Enabled = false;
 	}
 
