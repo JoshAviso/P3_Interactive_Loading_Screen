@@ -10,8 +10,6 @@ void FPSCounterUpdater::Update(float deltaTime)
 	_accumulatedTime += deltaTime;
 	_frameCount++;
 
-	Logger::Log("Frame Cnt: " + std::to_string(_frameCount) + ", Acc Time: " + std::to_string(_accumulatedTime));
-
 	if (_accumulatedTime >= UpdateFrequency)
 	{
 		float fps = static_cast<float>(_frameCount) / _accumulatedTime;
