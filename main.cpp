@@ -20,6 +20,8 @@
 #include <Components/Renderers/SpriteRenderer.h>
 #include <Resources/ResourceManager.h>
 
+#include <Components/Update/MouseDetectScript.h>
+
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
 	void OnThreadFinished(int id) override
@@ -63,6 +65,7 @@ int main()
 	chara1->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("Chara1Tex", "Assets/Images/motoko.png")))
 		->Size = { 513.f, 600.f };
 	chara1->Scale = { 1.4f, 1.4f };
+	chara1->AddComponent(new MouseDetectScript());
 
 	Object* bg2 = ObjectManager::RegisterObject(new Object("BG2"));
 	bg2->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("BG2Tex", "Assets/Images/BG4.jpg")))
@@ -73,6 +76,7 @@ int main()
 	chara2->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("Chara2Tex", "Assets/Images/spike.png")))
 		->Size = { 513.f, 525.f };
 	chara2->Scale = { 1.4f, 1.4f };
+	chara2->AddComponent(new MouseDetectScript());
 
 	List<ImagePanning::ObjectPanningInfo> panningObjects = {
 		{ bg1,		{650.f, 350.f},		{5.f, 2.f},		0.4f, 0 },

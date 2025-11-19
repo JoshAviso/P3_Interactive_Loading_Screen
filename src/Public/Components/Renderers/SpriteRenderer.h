@@ -16,6 +16,7 @@ public:
 
 private:
 	sf::Sprite _sprite;
+	sf::Image _cachedCollisionCheckImg;
 	Shared<TextureResource> _texture;
 
 protected:
@@ -33,7 +34,10 @@ public:
 		SetTexture(texture);
 	}
 	void SetTexture(Shared<TextureResource> texture, bool resize = true) {
-		if (texture == nullptr) return;
+		if (texture == nullptr) {
+			_cachedCollisionCheckImg = sf::Image();
+			return;
+		}
 		_sprite.setTexture(texture->_texture);
 		_texture = texture;
 
@@ -41,6 +45,20 @@ public:
 		_sprite.setOrigin(size.x / 2.f, size.y / 2.f);
 
 		if (resize) Size = size;
+
+		_cachedCollisionCheckImg = _texture->_texture.copyToImage();
+	}
+	bool Intersects(Vec2 position) {
+		if (!_owner || !_owner->Enabled) return false;
+		if (_texture == nullptr) return false;
+
+		sf::FloatRect bounds = _sprite.getGlobalBounds();
+		if (!bounds.contains(position.x, position.y)) return false;
+
+		sf::Vector2f localPos = _sprite.getInverseTransform().transformPoint(position.x, position.y);
+		sf::Color pixColor = _cachedCollisionCheckImg.getPixel(localPos.x, localPos.y);
+
+		return pixColor.a > 0;
 	}
 };
 

@@ -3,7 +3,7 @@
 #include <Core/Color.h>
 #include <Components/Renderers/IRenderer.h>
 
-class IShapeRenderer : public IRenderer
+class IShapeRenderer : virtual public IRenderer
 {
 public:
 	Color FillColor = Color::White();

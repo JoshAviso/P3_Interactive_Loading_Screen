@@ -12,5 +12,6 @@ public:
 	void SetSize(Vec2 size) {
 		static_cast<sf::RectangleShape*>(_shape)->setSize(sf::Vector2f(size.x, size.y));
 	}
+	bool Intersects(Vec2 position) override { return false; }
 };
 

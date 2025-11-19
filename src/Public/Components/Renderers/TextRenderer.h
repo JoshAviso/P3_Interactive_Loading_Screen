@@ -55,6 +55,7 @@ protected:
 
 		window.draw(_text);
 	};
+	bool Intersects(Vec2 position) override { return false; }
 
 public:
 	TextRenderer() = default;

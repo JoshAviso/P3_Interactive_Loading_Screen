@@ -8,6 +8,8 @@
 
 #include <Components/IComponent.h>
 
+class IRenderer;
+
 class Object
 {
 public:
@@ -69,6 +71,7 @@ public:
 			_components.erase(it);
 		}
 	}
+	bool Intersects(Vec2 position);
 
 	friend class ObjectManager;
 };

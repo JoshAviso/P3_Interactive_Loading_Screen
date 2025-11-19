@@ -143,6 +143,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Private\Components\Update\MouseDetectScript.cpp" />
     <ClCompile Include="src\Private\Components\Update\FPSCounterUpdater.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Private\Application.cpp" />
@@ -153,7 +154,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClCompile Include="src\Private\Core\Logger.cpp" />
     <ClCompile Include="src\Private\Input\Input.cpp" />
     <ClCompile Include="src\Private\Objects\ObjectManager.cpp" />
-    <ClCompile Include="src\Private\Objects\Shapes\IShape.cpp" />
+    <ClCompile Include="src\Private\Components\Renderers\Shapes\IShapeRenderer.cpp" />
     <ClCompile Include="src\Private\Resources\FontResource.cpp" />
     <ClCompile Include="src\Private\Resources\ResourceManager.cpp" />
     <ClCompile Include="src\Private\Resources\SoundClipResource.cpp" />
@@ -163,8 +164,12 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClCompile Include="src\Private\Threading\WorkerTasks\LoadSoundClipTask.cpp" />
     <ClCompile Include="src\Private\Threading\WorkerTasks\LoadTextureTask.cpp" />
     <ClCompile Include="src\Private\Threading\WorkerThread.cpp" />
+    <ClCompile Include="src\Private\Objects\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Public\Components\Update\MouseDetectScript.h" />
+    <ClInclude Include="src\Public\Components\Interfaces\IMouseHoverCallback.h" />
+    <ClInclude Include="src\Public\Components\Interfaces\IMouseClickCallback.h" />
     <ClInclude Include="src\Public\Input\IRightClickInputCallback.h" />
     <ClInclude Include="src\Public\Input\ILeftClickInputCallback.h" />
     <ClInclude Include="src\Public\Components\Update\FPSCounterUpdater.h" />
@@ -194,6 +199,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClInclude Include="src\Public\Objects\ObjectManager.h" />
     <ClInclude Include="src\Public\Resources\FontResource.h" />
     <ClInclude Include="src\Public\Resources\IResource.h" />
+    <ClInclude Include="src\Public\Input\IMousePositionTracker.h" />
     <ClInclude Include="src\Public\Resources\ResourceManager.h" />
     <ClInclude Include="src\Public\Resources\SoundClipResource.h" />
     <ClInclude Include="src\Public\Resources\TextureResource.h" />

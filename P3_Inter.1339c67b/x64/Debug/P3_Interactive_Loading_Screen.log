@@ -1,4 +1,75 @@
-﻿  FPSCounterUpdater.cpp
+﻿  main.cpp
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+  Application.cpp
+  IShapeRenderer.cpp
+  SpriteRenderer.cpp
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         ]
+  (compiling source file 'src/Private/Components/Renderers/SpriteRenderer.cpp')
+  
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         ]
+  (compiling source file 'src/Private/Components/Renderers/SpriteRenderer.cpp')
+  
+  TextRenderer.cpp
+  AudioSourceComponent.cpp
+  FPSCounterUpdater.cpp
+  ImagePanning.cpp
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         ]
+  (compiling source file 'src/Private/Components/Update/ImagePanning.cpp')
+  
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         ]
+  (compiling source file 'src/Private/Components/Update/ImagePanning.cpp')
+  
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Components\Update\ImagePanning.cpp(32,26): warning C4267: '=': conversion from 'size_t' to 'uint', possible loss of data
+  MouseDetectScript.cpp
+  Object.cpp
+  ObjectManager.cpp
+  LoadMusicTask.cpp
+  LoadSoundClipTask.cpp
+  LoadTextureTask.cpp
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,78): warning C4244:         ]
+  (compiling source file 'src/Private/Threading/WorkerTasks/LoadTextureTask.cpp')
+  
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244: 'argument': conversion from 'T' to 'unsigned int', possible loss of data
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         with
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         [
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:             T=float
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Public\Components\Renderers\SpriteRenderer.h(59,66): warning C4244:         ]
+  (compiling source file 'src/Private/Threading/WorkerTasks/LoadTextureTask.cpp')
+  
+  Generating Code...
   P3_Interactive_Loading_Screen.vcxproj -> C:\Users\Josh\repos\P3_Interactive_Loading_Screen\x64\Debug\P3_Interactive_Loading_Screen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

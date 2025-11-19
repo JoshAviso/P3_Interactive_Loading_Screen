@@ -1,11 +1,14 @@
 #pragma once
 
 #include <Components/IComponent.h>
+#include <Objects/ObjectManager.h>
 
-class IUpdateComponent : public IComponent
+class IUpdateComponent : virtual public IComponent
 {
 public:
 	virtual ~IUpdateComponent() = default;
-	virtual void Update(float deltaTime) = 0;
+protected:
+	virtual void Update(float deltaTime){};
+	friend class ObjectManager;
 };
 

@@ -8,6 +8,7 @@
 
 class ILeftClickInputCallback;
 class IRightClickInputCallback;
+class IMousePositionTracker;
 
 class Input
 {
@@ -145,10 +146,13 @@ public:
 private:
 	List<ILeftClickInputCallback*> _leftClickCallbacks;
 	List<IRightClickInputCallback*> _rightClickCallbacks;
+	List<IMousePositionTracker*> _mousePositionTrackers;
 	static void RegisterLeftClickCallback(ILeftClickInputCallback* callback);
 	static void UnregisterLeftClickCallback(ILeftClickInputCallback* callback);
 	static void RegisterRightClickCallback(IRightClickInputCallback* callback);
 	static void UnregisterRightClickCallback(IRightClickInputCallback* callback);
+	static void RegisterMousePositionTracker(IMousePositionTracker* tracker);
+	static void UnregisterMousePositionTracker(IMousePositionTracker* tracker);
 	
 private:
 	static void UpdateInput(sf::Event& event);
@@ -170,5 +174,6 @@ public:
 	friend class Application;
 	friend class ILeftClickInputCallback;
 	friend class IRightClickInputCallback;
+	friend class IMousePositionTracker;
 };
 

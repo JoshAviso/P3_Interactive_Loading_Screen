@@ -2,6 +2,7 @@
 
 #include <Input/ILeftClickInputCallback.h>
 #include <Input/IRightClickInputCallback.h>
+#include <Input/IMousePositionTracker.h>
 
 #include <Application.h>
 #include <Core/Logger.h>
@@ -83,6 +84,11 @@ void Input::ProcessMousePosition(Vec2i sfNewPos)
 	Mouse.Delta = newPos - Mouse.Position;
 	Mouse.LastPosition = Mouse.Position;
 	Mouse.Position = newPos;
+
+    for (int i = 0; i < _mousePositionTrackers.size(); i++) {
+        if (_mousePositionTrackers[i] != nullptr)
+            _mousePositionTrackers[i]->CheckPosition(Mouse.Position);
+    }
 }
 
 Input::EKeyCode Input::LastUsedKey = Input::EKeyCode::KEY_COUNT;
@@ -224,6 +230,19 @@ void Input::UnregisterRightClickCallback(IRightClickInputCallback* callback)
 	if (it != _instance->_rightClickCallbacks.end()) {
 		_instance->_rightClickCallbacks.erase(it);
 	}
+}
+
+void Input::RegisterMousePositionTracker(IMousePositionTracker* tracker)
+{
+    _instance->_mousePositionTrackers.push_back(tracker);
+}
+
+void Input::UnregisterMousePositionTracker(IMousePositionTracker* tracker)
+{
+    auto it = std::find(_instance->_mousePositionTrackers.begin(), _instance->_mousePositionTrackers.end(), tracker);
+    if (it != _instance->_mousePositionTrackers.end()) {
+        _instance->_mousePositionTrackers.erase(it);
+    }
 }
 
 // SINGLETON 

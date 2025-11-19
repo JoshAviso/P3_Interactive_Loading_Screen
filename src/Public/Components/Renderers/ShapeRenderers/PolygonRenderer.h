@@ -12,5 +12,6 @@ public:
 	void SetRadius(float radius) {
 		static_cast<sf::CircleShape*>(_shape)->setRadius(radius);
 	}
+	bool Intersects(Vec2 position) override { return false; }
 };
 
