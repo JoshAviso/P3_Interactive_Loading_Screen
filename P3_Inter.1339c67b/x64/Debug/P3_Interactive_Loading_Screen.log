@@ -1,7 +1,4 @@
-﻿  main.cpp
-  ImagePanning.cpp
-C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Components\Update\ImagePanning.cpp(32,26): warning C4267: '=': conversion from 'size_t' to 'uint', possible loss of data
-  Generating Code...
+﻿  FPSCounterUpdater.cpp
   P3_Interactive_Loading_Screen.vcxproj -> C:\Users\Josh\repos\P3_Interactive_Loading_Screen\x64\Debug\P3_Interactive_Loading_Screen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

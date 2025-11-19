@@ -3,6 +3,7 @@
 #include <Core/Logger.h>
 #include <Objects/ObjectManager.h>
 #include <Resources/ResourceManager.h>
+#include <Input/Input.h>
 
 void Application::Run()
 {
@@ -13,6 +14,9 @@ void Application::Run()
 
             if (event.type == sf::Event::Closed) {
 				shouldClose = true;
+            }
+            else {
+                Input::UpdateInput(event);
             }
         }
 
@@ -66,6 +70,7 @@ Application::Application(const Desc& desc)
 	if(desc.fpsCap >= 0) _window->setFramerateLimit(desc.fpsCap);
 
     // Manager Initializations
+	Input::Initialize();
 	ObjectManager::Initialize();
     ResourceManager::Initialize();
 }

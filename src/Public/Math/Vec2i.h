@@ -11,7 +11,7 @@ struct Vec2i {
 		struct { int a, b; };
 		int data[2];
 	};
-
+	Vec2i(int _x = 0, int _y = 0) : x(_x), y(_y) {};
 	Vec2i& operator=(const Vec2i& other) {
 		x = other.x;
 		y = other.y;

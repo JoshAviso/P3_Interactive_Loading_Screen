@@ -72,6 +72,9 @@
     <ClCompile Include="src\Private\Components\Update\ImagePanning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Private\Input\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\CircleRenderer.h">
@@ -483,6 +486,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Public\Components\Update\ImagePanning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Input\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Input\ILeftClickInputCallback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Input\IRightClickInputCallback.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

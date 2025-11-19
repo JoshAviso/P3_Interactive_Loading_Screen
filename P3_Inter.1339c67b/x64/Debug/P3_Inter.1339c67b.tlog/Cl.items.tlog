@@ -6,6 +6,7 @@ C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Components\Rendere
 C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Components\Update\AudioSourceComponent.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\AudioSourceComponent.obj
 C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Components\Update\ImagePanning.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\ImagePanning.obj
 C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Core\Logger.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\Logger.obj
+C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Input\Input.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\Input.obj
 C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Objects\ObjectManager.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\ObjectManager.obj
 C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Objects\Shapes\IShape.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\IShape.obj
 C:\Users\Josh\repos\P3_Interactive_Loading_Screen\src\Private\Resources\FontResource.cpp;C:\Users\Josh\repos\P3_Interactive_Loading_Screen\P3_Inter.1339c67b\x64\Debug\FontResource.obj

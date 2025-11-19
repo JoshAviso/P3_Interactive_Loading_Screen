@@ -2,6 +2,7 @@
 
 #include <Objects/Object.h>
 #include <Core/Logger.h>
+#include <Input/Input.h>
 
 void FPSCounterUpdater::Update(float deltaTime)
 {

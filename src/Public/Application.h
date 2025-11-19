@@ -19,6 +19,7 @@ public:
 
 public:
 	Vec2i WindowSize() const { return _windowSize; }
+	sf::RenderWindow* GetWindow() const { return _window.get(); };
 
 private:
 	String _appName = "";
