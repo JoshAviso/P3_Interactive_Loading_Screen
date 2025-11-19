@@ -5,67 +5,95 @@
 #include <Objects/ObjectManager.h>
 #include <Math/Vec2.h>
 
-ImagePanning::ImagePanning(float panX, float panY)
+#include <algorithm>
+
+#include <Components/Renderers/SpriteRenderer.h>
+
+ImagePanning::ImagePanning(float panTime, float fadeTime, List<ObjectPanningInfo>& objects) 
+	: _panTime(panTime), _fadeTime(fadeTime)
 {
-	_panX = panX;
-	_panY = panY;
+	std::stable_sort(objects.begin(), objects.end(),
+		[](const ObjectPanningInfo& a, const ObjectPanningInfo& b) {
+		return a.setNumber < b.setNumber;
+	});
+
+	for (int i = 0; i < objects.size(); i++)
+	{
+		if (_objects.find(objects[i].setNumber) == _objects.end())
+		{
+			_objects[objects[i].setNumber] = List<ObjectPanningInfo>{};
+		}
+
+		_objects[objects[i].setNumber].push_back(objects[i]);
+
+		ToggleObject(objects[i], false);
+	}
+
+	setCount = _objects.size();
+
+	_currentObjects = &_objects[0];
+	for (int i = 0; i < _currentObjects->size(); i++) {
+		ToggleObject((*_currentObjects)[i], true);
+	}
 }
 
 void ImagePanning::Update(float deltaTime)
 {
-	//Get original position to reset to
-	//putting it in constructor no worky, i think cuz _owner not assigned yet
-	if (origPos.x == 0 && origPos.y == 0)
-		origPos = _owner->Position;
+	//OldUpdate(deltaTime);
 
 	elapsedTime += deltaTime;
 
-	//Pan for 3 secs
-	if(elapsedTime < 3.0f)
-		_owner->Position += {_panX, _panY};
+	if (elapsedTime <= _fadeTime) {
+		// Still transitioning the current and prev sets
 
-	//Done panning, enable next obj
-	else if (_owner->Name == "BG1" && elapsedTime > 3.0f)
-	{
-		nextBG = ObjectManager::FindObjectByName("BG2");
-		
-		nextBG->Enabled = true;
 
-		elapsedTime = 0;
-		_owner->Position = origPos; //so it doesnt go off screen
-		_owner->Enabled = false;
+		// Panning and fading in the current set
+		for (int i = 0; i < _currentObjects->size(); i++) {
+			(*_currentObjects)[i].object->Position += (*_currentObjects)[i].panSpeed * deltaTime;
+			SpriteRenderer* sr = (*_currentObjects)[i].object->GetComponent<SpriteRenderer>();
+			if(sr) sr->Color.a += ((*_currentObjects)[i].maxAlpha / _fadeTime) * deltaTime;
+		}
+
+		// Panning and fading out the previous set
+		if (_prevObjects != nullptr) {
+			for (int i = 0; i < _prevObjects->size(); i++) {
+				(*_prevObjects)[i].object->Position += (*_prevObjects)[i].panSpeed * deltaTime;
+				SpriteRenderer* sr = (*_prevObjects)[i].object->GetComponent<SpriteRenderer>();
+				if(sr) sr->Color.a -= ((*_prevObjects)[i].maxAlpha / _fadeTime) * deltaTime;
+			}
+		}
 	}
+	else if (elapsedTime <= _panTime + _fadeTime) {
+		// Disable previous set
+		if (_prevObjects != nullptr) {
+			for (int i = 0; i < _prevObjects->size(); i++) {
+				ToggleObject((*_prevObjects)[i], false);
+			}
+		}
 
-	else if (_owner->Name == "BG2" && elapsedTime > 3.0f)
-	{
-		nextBG = ObjectManager::FindObjectByName("BG1");
-
-		nextBG->Enabled = true;
-
-		elapsedTime = 0;
-		_owner->Position = origPos;
-		_owner->Enabled = false;
+		// Panning the current set
+		for (int i = 0; i < _currentObjects->size(); i++)
+			(*_currentObjects)[i].object->Position += (*_currentObjects)[i].panSpeed * deltaTime;
 	}
-
-	else if (_owner->Name == "CHARA1" && elapsedTime > 3.0f)
-	{
-		nextChara = ObjectManager::FindObjectByName("CHARA2");
-
-		nextChara->Enabled = true;
-
-		elapsedTime = 0;
-		_owner->Position = origPos;
-		_owner->Enabled = false;
+	else {
+		// Transition to next set
+		_prevObjects = &_objects[currentSet];
+		currentSet = (currentSet + 1) % setCount;
+		_currentObjects = &_objects[currentSet];
+		for (int i = 0; i < _currentObjects->size(); i++) {
+			ToggleObject((*_currentObjects)[i], true);
+		}
+		elapsedTime = 0.0f;
 	}
+}
 
-	else if (_owner->Name == "CHARA2" && elapsedTime > 3.0f)
+void ImagePanning::ToggleObject(ObjectPanningInfo obj, bool enabled)
+{
+	obj.object->Enabled = enabled;
+	if (enabled)
 	{
-		nextChara = ObjectManager::FindObjectByName("CHARA1");
-
-		nextChara->Enabled = true;
-
-		elapsedTime = 0;
-		_owner->Position = origPos;
-		_owner->Enabled = false;
+		obj.object->Position = obj.startPos;
+		SpriteRenderer* sr = obj.object->GetComponent<SpriteRenderer>();
+		if(sr) sr->Color.a = 0.f;
 	}
 }

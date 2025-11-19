@@ -17,6 +17,8 @@
 #include <Resources/FontResource.h>
 #include <Components/Update/FPSCounterUpdater.h>
 #include <Components/Update/ImagePanning.h>
+#include <Components/Renderers/SpriteRenderer.h>
+#include <Resources/ResourceManager.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -47,46 +49,46 @@ int main()
 
 	Object* circle = new Object("Circle");
 	circle->Position = { 400.0f, 300.0f };
-	TextRenderer* text = circle->AddComponent(new TextRenderer(arialFont));
-	text->Text = "Loading Resources...";
-	text->Alignment = { 0.5f, 0.5f };
-	text->RenderLayer = 0;
+	//TextRenderer* text = circle->AddComponent(new TextRenderer(arialFont));
+	//text->Text = "Loading Resources...";
+	//text->Alignment = { 0.5f, 0.5f };
+	//text->RenderLayer = 0;
 
-	Object* bg1 = new Object("BG1");
-	bg1->Position = {650.0f, 350.0f};
-	bg1->AddComponent(new ImagePanning(0.08f, 0));
+	Object* bg1 = ObjectManager::RegisterObject(new Object("BG1"));
+	bg1->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("BG1Tex", "Assets/Images/BG5.jpg")))
+		->Size = { 1000.f, 600.f };
+	bg1->Scale = { 1.6f, 1.6f };
 
-	Object* chara1 = new Object("CHARA1");
-	chara1->Position = { 640.0f, 440.0f };
-	chara1->AddComponent(new ImagePanning(0.08f, 0));
+	Object* chara1 = ObjectManager::RegisterObject(new Object("CHARA1"));
+	chara1->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("Chara1Tex", "Assets/Images/motoko.png")))
+		->Size = { 513.f, 600.f };
+	chara1->Scale = { 1.4f, 1.4f };
 
-	Object* bg2 = new Object("BG2");
-	bg2->Position = { 650.0f, 350.0f };
-	bg2->AddComponent(new ImagePanning(-0.08f, 0));
+	Object* bg2 = ObjectManager::RegisterObject(new Object("BG2"));
+	bg2->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("BG2Tex", "Assets/Images/BG4.jpg")))
+		->Size = { 1000.f, 600.f };
+	bg2->Scale = { 1.6f, 1.6f };
 
-	Object* chara2 = new Object("CHARA2");
-	chara2->Position = { 640.0f, 440.0f };
-	chara2->AddComponent(new ImagePanning(-0.08f, 0));
+	Object* chara2 = ObjectManager::RegisterObject(new Object("CHARA2"));
+	chara2->AddComponent(new SpriteRenderer(ResourceManager::LoadFromFile<TextureResource>("Chara2Tex", "Assets/Images/spike.png")))
+		->Size = { 513.f, 525.f };
+	chara2->Scale = { 1.4f, 1.4f };
+
+	List<ImagePanning::ObjectPanningInfo> panningObjects = {
+		{ bg1,		{650.f, 350.f},		{5.f, 2.f},		0.4f, 0 },
+		{ chara1,	{340.f, 440.f},		{-5.f, -2.f},	0.8f, 0 },
+		{ bg2,		{650.f, 350.f},		{-5.f, -2.f},	0.4f, 1 },
+		{ chara2,	{940.f, 440.f},		{5.f, 2.f},		0.8f, 1 }
+	};
+
+	ObjectManager::RegisterObject(new Object("Panner"))
+		->AddComponent(new ImagePanning(8.f, 1.f, panningObjects));
 
 	ObjectManager::RegisterObject(circle);
-	ObjectManager::RegisterObject(bg1);
-	ObjectManager::RegisterObject(chara1);
-	ObjectManager::RegisterObject(bg2);
-	ObjectManager::RegisterObject(chara2);
-
-	bg2->Enabled = false;
-	chara2->Enabled = false;
 
 	ThreadPool* threadPool = new ThreadPool(2, new SamplePoolFinishedTask());
 	threadPool->StartScheduling();
 
-	threadPool->ScheduleTask(new LoadTextureTask("BG1Tex", "Assets/Images/BG5.jpg", 0.0f, bg1, { 1000.f, 600.f }));
-	threadPool->ScheduleTask(new LoadTextureTask("Chara1Tex", "Assets/Images/motoko.png", 0.0f, chara1, { 513.f, 600.f }));
-
-	threadPool->ScheduleTask(new LoadTextureTask("BG2Tex", "Assets/Images/BG4.jpg", 0.0f, bg2, { 1000.f, 600.f }));
-	threadPool->ScheduleTask(new LoadTextureTask("Chara2Tex", "Assets/Images/spike.png", 0.0f, chara2, { 513.f, 525.f }));
-
-	threadPool->ScheduleTask(new LoadTextureTask("TestTex", "Assets/Images/TestImage1.png", 2000.f, circle, {100.f, 500.f}));
 	threadPool->ScheduleTask(new LoadSoundClipTask("TestClip", "Assets/Audio/TestSound1.wav", 4000.f, circle, true));
 	threadPool->ScheduleTask(new LoadMusicTask(circle, "Assets/Audio/TestMusic1.mp3", true, 6000.f));
 	

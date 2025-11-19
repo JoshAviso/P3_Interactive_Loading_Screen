@@ -11,7 +11,7 @@
 class SpriteRenderer : public IRenderer
 {
 public:
-	Vec2 Size;
+	Vec2 Size = {0.f, 0.f};
 	Color Color = Color::White();
 
 private:
@@ -29,10 +29,10 @@ protected:
 
 public:
 	SpriteRenderer() = default;
-	SpriteRenderer(Shared<TextureResource>& texture) {
+	SpriteRenderer(Shared<TextureResource> texture) {
 		SetTexture(texture);
 	}
-	void SetTexture(Shared<TextureResource>& texture, bool resize = true) {
+	void SetTexture(Shared<TextureResource> texture, bool resize = true) {
 		if (texture == nullptr) return;
 		_sprite.setTexture(texture->_texture);
 		_texture = texture;

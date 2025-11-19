@@ -40,4 +40,12 @@ struct Vec2 {
 		y -= other.y;
 		return *this;
 	};
+	Vec2 operator*(const float other) const {
+		return { x * other, y * other };
+	};
+	Vec2& operator*=(const float other) {
+		x *= other;
+		y *= other;
+		return *this;
+	};
 };

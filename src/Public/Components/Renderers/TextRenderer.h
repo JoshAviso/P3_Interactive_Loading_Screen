@@ -11,6 +11,8 @@
 
 #include <Resources/FontResource.h>
 
+#include <Core/Logger.h>
+
 class TextRenderer : public IRenderer
 {
 public:
@@ -35,8 +37,8 @@ protected:
 		_text.setFont(Font->_font);
 		_text.setString(Text);
 		_text.setCharacterSize(FontSize);
-		_text.setFillColor(sf::Color(FontColor.r, FontColor.g, FontColor.b, FontColor.a));
-		_text.setOutlineColor(sf::Color(OutlineColor.r, OutlineColor.g, OutlineColor.b, OutlineColor.a));
+		_text.setFillColor(FontColor);
+		_text.setOutlineColor(OutlineColor);
 		_text.setOutlineThickness(OutlineThickness);
 		sf::Uint32 style = sf::Text::Regular;
 		if (IsBold) style |= sf::Text::Bold;
