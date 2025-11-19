@@ -530,6 +530,9 @@
     <ClInclude Include="src\Public\Components\Update\EnemyController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Public\Components\Update\EnemySpawner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="thirdparty\include\SFML\Audio\SoundFileFactory.inl">

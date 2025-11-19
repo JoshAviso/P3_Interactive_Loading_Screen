@@ -172,6 +172,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClInclude Include="src\Public\Components\Update\BulletMover.h" />
     <ClInclude Include="src\Public\Components\Update\CharacterController.h" />
     <ClInclude Include="src\Public\Components\Update\EnemyController.h" />
+    <ClInclude Include="src\Public\Components\Update\EnemySpawner.h" />
     <ClInclude Include="src\Public\Components\Update\MouseDetectScript.h" />
     <ClInclude Include="src\Public\Components\Interfaces\IMouseHoverCallback.h" />
     <ClInclude Include="src\Public\Components\Interfaces\IMouseClickCallback.h" />

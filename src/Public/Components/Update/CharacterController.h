@@ -27,6 +27,8 @@ public:
 	{};
 
 private:
+	List<Object*> _bullets;
+
 	float _moveSpeed = 0.f;
 	Vec2 _screenEdgeMargin = {0.f, 0.f};
 	void Update(float deltaTime) {
@@ -75,13 +77,21 @@ private:
 	};
 
 	void SpawnBullet() {
-		Object* bullet = ObjectManager::RegisterObject(new Object("Bullet"));
+		Object* bullet = ObjectManager::RegisterObject(new Object("PlayerBullet"));
 		bullet->AddComponent(new RectangleRenderer({10.f, 5.f}))->RenderLayer = 8;
 		bullet->AddComponent(new BulletMover({ _moveSpeed * 1.5f, {15.f, 10.f} }));
 		bullet->Position = _owner->Position;
 		bullet->Rotation = _owner->Rotation - 90.f;
 
 		bullet->AddComponent(new MouseDetectScript());
+		_bullets.push_back(bullet);
+	}
+
+public:
+	void DisableBullets() {
+		for (int i = 0; i < _bullets.size(); i++) {
+			_bullets[i]->Enabled = false;
+		}
 	}
 };
 

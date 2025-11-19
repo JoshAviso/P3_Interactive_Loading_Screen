@@ -27,6 +27,8 @@
 #include <Components/Update/EnemyController.h>
 #include <Components/Renderers/ShapeRenderers/PolygonRenderer.h>
 
+#include <Components/Update/EnemySpawner.h>
+
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
 	void OnThreadFinished(int id) override
@@ -60,11 +62,9 @@ int main()
 	player->AddComponent(new CharacterController({200.f, { 0.f, 0.f }}));
 	player->AddComponent(new TriangleRenderer(10.f))->RenderLayer = 10;
 
-	// Enemy
-	Object* enemy = ObjectManager::RegisterObject(new Object("Enemy"));
-	enemy->Position = { 100.f, 100.f };
-	enemy->AddComponent(new EnemyController());
-	enemy->AddComponent(new PolygonRenderer(5, 12.f));
+	// Enemy Spawner
+	Object* enemySpawner = ObjectManager::RegisterObject(new Object("EnemySpawner"));
+	enemySpawner->AddComponent(new EnemySpawner({ 1.f, {200.f, 200.f} }));
 
 	Object* circle = new Object("Circle");
 	circle->Position = { 400.0f, 300.0f };
