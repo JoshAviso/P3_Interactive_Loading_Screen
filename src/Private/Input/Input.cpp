@@ -20,28 +20,32 @@ void Input::UpdateInput(sf::Event& event)
 		if (event.mouseButton.button == sf::Mouse::Left) {
 			if(!Mouse.LeftDown) Mouse.LeftPressed = true;
 			Mouse.LeftDown = true;
-			for (auto& callback : _instance->_leftClickCallbacks)
-				if(callback != nullptr) callback->OnLeftClickPressed(Mouse.Position);
+			for (int i = 0; i < _instance->_leftClickCallbacks.size(); i++)
+			    if(_instance->_leftClickCallbacks[i] != nullptr) 
+                    _instance->_leftClickCallbacks[i]->OnLeftClickPressed(Mouse.Position);
 		}
 		else if (event.mouseButton.button == sf::Mouse::Right) {
 			if(!Mouse.RightDown) Mouse.RightPressed = true;
 			Mouse.RightDown = true;
-			for (auto& callback : _instance->_rightClickCallbacks) 
-				if(callback != nullptr) callback->OnRightClickPressed(Mouse.Position);
+            for (int i = 0; i < _instance->_rightClickCallbacks.size(); i++)
+                if (_instance->_rightClickCallbacks[i] != nullptr)
+                    _instance->_rightClickCallbacks[i]->OnRightClickPressed(Mouse.Position);
 		}
 		break;
 	case sf::Event::MouseButtonReleased:
 		if (event.mouseButton.button == sf::Mouse::Left) {
 			if(Mouse.LeftDown) Mouse.LeftReleased = true;
 			Mouse.LeftDown = false;
-			for (auto& callback : _instance->_leftClickCallbacks)
-				if (callback != nullptr) callback->OnLeftClickReleased(Mouse.Position);
+            for (int i = 0; i < _instance->_leftClickCallbacks.size(); i++)
+                if (_instance->_leftClickCallbacks[i] != nullptr)
+                    _instance->_leftClickCallbacks[i]->OnLeftClickReleased(Mouse.Position);
 		}
 		else if (event.mouseButton.button == sf::Mouse::Right) {
 			if(Mouse.RightDown) Mouse.RightReleased = true;
 			Mouse.RightDown = false;
-			for (auto& callback : _instance->_rightClickCallbacks) 
-				if (callback != nullptr) callback->OnRightClickReleased(Mouse.Position);
+            for (int i = 0; i < _instance->_rightClickCallbacks.size(); i++)
+                if (_instance->_rightClickCallbacks[i] != nullptr)
+                    _instance->_rightClickCallbacks[i]->OnRightClickReleased(Mouse.Position);
 		}
 		break;
 	case sf::Event::MouseWheelScrolled:
@@ -210,26 +214,24 @@ void Input::RegisterLeftClickCallback(ILeftClickInputCallback* callback)
 {
 	_instance->_leftClickCallbacks.push_back(callback);
 }
-
-void Input::UnregisterLeftClickCallback(ILeftClickInputCallback* callback)
-{
-	auto it = std::find(_instance->_leftClickCallbacks.begin(), _instance->_leftClickCallbacks.end(), callback);
-	if (it != _instance->_leftClickCallbacks.end()) {
-		_instance->_leftClickCallbacks.erase(it);
-	}
+void Input::UnregisterLeftClickCallback(ILeftClickInputCallback* callback)  
+{  
+   auto it = std::find(_instance->_leftClickCallbacks.begin(), _instance->_leftClickCallbacks.end(), callback);  
+   if (it != _instance->_leftClickCallbacks.end()) {  
+       _instance->_leftClickCallbacks.erase(it);  
+   }  
 }
 
 void Input::RegisterRightClickCallback(IRightClickInputCallback* callback)
 {
 	_instance->_rightClickCallbacks.push_back(callback);
 }
-
-void Input::UnregisterRightClickCallback(IRightClickInputCallback* callback)
-{
-	auto it = std::find(_instance->_rightClickCallbacks.begin(), _instance->_rightClickCallbacks.end(), callback);
-	if (it != _instance->_rightClickCallbacks.end()) {
-		_instance->_rightClickCallbacks.erase(it);
-	}
+void Input::UnregisterLeftClickCallback(ILeftClickInputCallback* callback)  
+{  
+   auto it = std::find(_instance->_leftClickCallbacks.begin(), _instance->_leftClickCallbacks.end(), callback);  
+   if (it != _instance->_leftClickCallbacks.end()) {  
+       _instance->_leftClickCallbacks.erase(it);  
+   }  
 }
 
 void Input::RegisterMousePositionTracker(IMousePositionTracker* tracker)
@@ -237,12 +239,12 @@ void Input::RegisterMousePositionTracker(IMousePositionTracker* tracker)
     _instance->_mousePositionTrackers.push_back(tracker);
 }
 
-void Input::UnregisterMousePositionTracker(IMousePositionTracker* tracker)
-{
-    auto it = std::find(_instance->_mousePositionTrackers.begin(), _instance->_mousePositionTrackers.end(), tracker);
-    if (it != _instance->_mousePositionTrackers.end()) {
-        _instance->_mousePositionTrackers.erase(it);
-    }
+void Input::UnregisterMousePositionTracker(IMousePositionTracker* tracker)  
+{  
+   auto it = std::find(_instance->_mousePositionTrackers.begin(), _instance->_mousePositionTrackers.end(), tracker);  
+   if (it != _instance->_mousePositionTrackers.end()) {  
+       _instance->_mousePositionTrackers.erase(it);  
+   }  
 }
 
 // SINGLETON 

@@ -81,6 +81,9 @@
     <ClCompile Include="src\Private\Objects\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Private\Components\Update\CharacterController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Public\Components\Renderers\ShapeRenderers\CircleRenderer.h">
@@ -513,6 +516,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Public\Components\Update\MouseDetectScript.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Components\Update\CharacterController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\Components\Update\BulletMover.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

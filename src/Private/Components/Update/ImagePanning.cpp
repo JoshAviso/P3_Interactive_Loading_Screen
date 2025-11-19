@@ -29,7 +29,7 @@ ImagePanning::ImagePanning(float panTime, float fadeTime, List<ObjectPanningInfo
 		ToggleObject(objects[i], false);
 	}
 
-	setCount = _objects.size();
+	setCount = (uint)_objects.size();
 
 	_currentObjects = &_objects[0];
 	for (int i = 0; i < _currentObjects->size(); i++) {

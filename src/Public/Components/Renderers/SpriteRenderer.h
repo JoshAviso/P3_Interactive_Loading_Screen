@@ -56,7 +56,7 @@ public:
 		if (!bounds.contains(position.x, position.y)) return false;
 
 		sf::Vector2f localPos = _sprite.getInverseTransform().transformPoint(position.x, position.y);
-		sf::Color pixColor = _cachedCollisionCheckImg.getPixel(localPos.x, localPos.y);
+		sf::Color pixColor = _cachedCollisionCheckImg.getPixel((uint)localPos.x, (uint)localPos.y);
 
 		return pixColor.a > 0;
 	}

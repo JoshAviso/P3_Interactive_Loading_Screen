@@ -143,6 +143,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Private\Components\Update\CharacterController.cpp" />
     <ClCompile Include="src\Private\Components\Update\MouseDetectScript.cpp" />
     <ClCompile Include="src\Private\Components\Update\FPSCounterUpdater.cpp" />
     <ClCompile Include="main.cpp" />
@@ -167,6 +168,8 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClCompile Include="src\Private\Objects\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Public\Components\Update\BulletMover.h" />
+    <ClInclude Include="src\Public\Components\Update\CharacterController.h" />
     <ClInclude Include="src\Public\Components\Update\MouseDetectScript.h" />
     <ClInclude Include="src\Public\Components\Interfaces\IMouseHoverCallback.h" />
     <ClInclude Include="src\Public\Components\Interfaces\IMouseClickCallback.h" />

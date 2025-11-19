@@ -48,4 +48,26 @@ struct Vec2 {
 		y *= other;
 		return *this;
 	};
+	Vec2 operator/(const float other) const {
+		return { x / other, y / other };
+	};
+	Vec2& operator/=(const float other) {
+		x /= other;
+		y /= other;
+		return *this;
+	};
+	float magnitude() {
+		return std::sqrt(sqrMagnitude());
+    }
+    float sqrMagnitude() {
+		return x * x + y * y;
+    }
+    Vec2& normalize() {
+		float mag = magnitude();
+		if (mag > fEpsilon) {
+			x /= mag;
+			y /= mag;
+		}
+		return *this;
+    }
 };

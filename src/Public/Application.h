@@ -18,7 +18,7 @@ public:
 	void Quit();
 
 public:
-	Vec2i WindowSize() const { return _windowSize; }
+	static Vec2i WindowSize() { return Instance->_windowSize; }
 	sf::RenderWindow* GetWindow() const { return _window.get(); };
 
 private:
