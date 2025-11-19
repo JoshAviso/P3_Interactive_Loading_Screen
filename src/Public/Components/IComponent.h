@@ -4,6 +4,9 @@ class Object;
 
 class IComponent
 {
+public:
+	Object* GetOwner() { return _owner; };
+
 protected:
 	Object* _owner = nullptr;
 

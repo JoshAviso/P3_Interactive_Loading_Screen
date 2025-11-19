@@ -4,7 +4,7 @@
 #include <Core/Common.h>
 #include <Objects/ObjectManager.h>
 
-class ICollider : public virtual IComponent {
+class ICollider : virtual public IComponent {
 protected:
 	virtual void OnCollisionEnter(ICollider* other){};
 	virtual void OnCollisionContinue(ICollider* other) {};

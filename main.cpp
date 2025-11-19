@@ -24,6 +24,8 @@
 
 #include <Components/Update/CharacterController.h>
 #include <Components/Renderers/ShapeRenderers/TriangleRenderer.h>
+#include <Components/Update/EnemyController.h>
+#include <Components/Renderers/ShapeRenderers/PolygonRenderer.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -57,6 +59,12 @@ int main()
 	player->Position = {Application::WindowSize().x / 2.f, Application::WindowSize().y / 2.f};
 	player->AddComponent(new CharacterController({200.f, { 0.f, 0.f }}));
 	player->AddComponent(new TriangleRenderer(10.f))->RenderLayer = 10;
+
+	// Enemy
+	Object* enemy = ObjectManager::RegisterObject(new Object("Enemy"));
+	enemy->Position = { 100.f, 100.f };
+	enemy->AddComponent(new EnemyController());
+	enemy->AddComponent(new PolygonRenderer(5, 12.f));
 
 	Object* circle = new Object("Circle");
 	circle->Position = { 400.0f, 300.0f };
