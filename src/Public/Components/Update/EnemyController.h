@@ -6,9 +6,12 @@
 #include <Objects/Object.h>
 #include <Core/Logger.h>
 
+#include <Components/Update/ScoreUpdater.h>
+
 class EnemyController : public IUpdateComponent, public ICollider {
 public:
 	struct Desc {
+		int scoreReward;
 		float acceleration;
 		float maxVelocity;
 		float targetingFreq;
@@ -16,6 +19,7 @@ public:
 		Vec2 screenEdgeMargin;
 	};
 	explicit EnemyController(const Desc desc) {
+		_scoreReward = desc.scoreReward;
 		_maxVelocity = desc.maxVelocity;
 		_acceleration = desc.acceleration;
 		_targetingFreq = desc.targetingFreq;
@@ -23,6 +27,7 @@ public:
 	}
 
 private:
+	int _scoreReward = 0;
 	float _targetingFreq = 0.f;
 	Vec2 _maxTargetOffset = { 0.f, 0.f };
 	float _acceleration = 0.f;
@@ -32,11 +37,13 @@ private:
 	Vec2 _screenEdgeMargin = { 0.f, 0.f };
 
 	Object* _playerRef = nullptr;
+	ScoreUpdater* _score = nullptr;
 
 	float elapsedTime = 0.f;
 
 	void Update(float deltaTime) override {
 		if (_playerRef == nullptr) _playerRef = ObjectManager::FindObjectByName("Player");
+		if (_score == nullptr) _score = ObjectManager::FindObjectByName("ScoreDisplay")->GetComponent<ScoreUpdater>();
 
 		elapsedTime += deltaTime;
 		
@@ -76,6 +83,9 @@ private:
 	virtual void OnCollisionEnter(ICollider* other) override {
 		if (other->GetOwner()->Name == "PlayerBullet") {
 			_owner->Enabled = false;
+			ObjectManager::RemoveObject(this->_owner);
+
+			if (_score) _score->UpdateScore(_scoreReward);
 		}
 	};
 

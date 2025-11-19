@@ -6,13 +6,8 @@
 
 void ObjectManager::RemoveObject(Object* obj)
 {
-	auto it = std::find_if(_instance->_objects.begin(), _instance->_objects.end(),
-		[obj](const Unique<Object>& ptr) {
-			return ptr.get() == obj;
-		});
-	if (it != _instance->_objects.end()) {
-		_instance->_objects.erase(it);
-	}
+	obj->Enabled = false;
+	_instance->_objectsToRemove.push_back(obj);
 }
 Object* ObjectManager::FindObjectByName(const String& name)
 {
@@ -41,17 +36,26 @@ void ObjectManager::UnregisterCollider(ICollider* collider)
 
 void ObjectManager::Update(float deltaTime)
 {
+	List<Object*> objects;
 	for (int i = 0; i < _objects.size(); i++)
-	{
-		if (!_objects[i]->Enabled) continue;
-		List<IUpdateComponent*> updateComponents = _objects[i]->GetComponents<IUpdateComponent>();
+		objects.push_back(_objects[i].get());
+
+	for (int i = 0; i < objects.size(); i++) {
+
+		if (!objects[i]->Enabled) continue;
+		List<IUpdateComponent*> updateComponents = objects[i]->GetComponents<IUpdateComponent>();
 		for (int j = 0; j < updateComponents.size(); j++)
 		{
-			updateComponents[j]->Update(deltaTime);
+			if(updateComponents[j] != nullptr) updateComponents[j]->Update(deltaTime);
 		}
 	}
 
 	CheckCollisions();
+
+	for (int i = 0; i < _objectsToRemove.size(); i++) {
+		RemoveObjConcrete(_objectsToRemove[i]);
+	}
+	_objectsToRemove.clear();
 }
 
 void ObjectManager::CheckCollisions()
@@ -108,6 +112,17 @@ void ObjectManager::RenderObjectsTo(sf::RenderWindow& window)
 
 	for (int i = 0; i < renderers.size(); i++) {
 		renderers[i]->Render(window);
+	}
+}
+
+void ObjectManager::RemoveObjConcrete(Object* obj)
+{
+	auto it = std::find_if(_instance->_objects.begin(), _instance->_objects.end(),
+		[obj](const Unique<Object>& ptr) {
+			return ptr.get() == obj;
+		});
+	if (it != _instance->_objects.end()) {
+		_instance->_objects.erase(it);
 	}
 }
 

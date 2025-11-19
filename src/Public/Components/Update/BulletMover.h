@@ -19,15 +19,18 @@ public:
 	struct Desc {
 		float moveSpeed;
 		Vec2 screenEdgeMargin;
+		bool isFriendly;
 	};
 	explicit BulletMover(Desc desc)
 		: _moveSpeed(desc.moveSpeed), 
-		_screenEdgeMargin(desc.screenEdgeMargin)
+		_screenEdgeMargin(desc.screenEdgeMargin),
+		_isFriendly(desc.isFriendly)
 	{};
 
 private:
 	float _moveSpeed = 0.f;
 	Vec2 _screenEdgeMargin = {0.f, 0.f};
+	bool _isFriendly = true;
 	void Update(float deltaTime) {
 		HandleMovement(deltaTime);
 	}
@@ -60,8 +63,17 @@ private:
 			_owner->Position.y > Application::WindowSize().y + _screenEdgeMargin.y ||
 			_owner->Position.x < -_screenEdgeMargin.x ||
 			_owner->Position.y < -_screenEdgeMargin.y
-			)
+			) {
 			_owner->Enabled = false;
+			ObjectManager::RemoveObject(this->_owner);
+		}
 	}
+
+	void OnCollisionEnter(ICollider* other) override {
+		if (other->GetOwner()->Name == (_isFriendly ? "Enemy" : "Player")) {
+			_owner->Enabled = false;
+			ObjectManager::RemoveObject(this->_owner);
+		}
+	};
 };
 

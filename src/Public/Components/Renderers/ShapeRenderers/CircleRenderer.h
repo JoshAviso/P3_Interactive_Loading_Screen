@@ -19,7 +19,7 @@ public:
 	bool Intersects(Vec2 position) override {
 		if (!_owner) return false;
 		Vec2 dir = position - _owner->Position;
-		return dir.sqrMagnitude() <= _radius * _radius;
+		return dir.sqrMagnitude() <= _radius * _radius ;
 	}
 
 private:

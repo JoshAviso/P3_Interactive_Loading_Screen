@@ -29,10 +29,12 @@ public:
 private:
 	List<ICollider*> _colliders;
 	List<Unique<Object>> _objects;
+	List<Object*> _objectsToRemove;
 
 	void Update(float deltaTime);
 	void CheckCollisions();
 	void RenderObjectsTo(sf::RenderWindow& window);
+	void RemoveObjConcrete(Object* obj);
 
 // SINGLETON
 public:

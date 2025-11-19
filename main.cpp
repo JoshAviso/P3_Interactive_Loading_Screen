@@ -28,6 +28,7 @@
 #include <Components/Renderers/ShapeRenderers/PolygonRenderer.h>
 
 #include <Components/Update/EnemySpawner.h>
+#include <Components/Update/ScoreUpdater.h>
 
 class SamplePoolFinishedTask : public IThreadFinishedCallback
 {
@@ -56,6 +57,15 @@ int main()
 	fpsText->Text = "0fps";
 	fpsCounter->AddComponent(new FPSCounterUpdater(0.5f));
 
+	// Score Display
+	Object* scoreDisplay = ObjectManager::RegisterObject(new Object("ScoreDisplay"));
+	scoreDisplay->Position = { Application::WindowSize().x / 2.f, 100.f };
+	TextRenderer* scoreText = scoreDisplay->AddComponent(new TextRenderer(arialFont));
+	scoreText->FontSize = 36;
+	scoreText->RenderLayer = 100;
+	scoreText->Alignment = { 0.5, 0.5f };
+	scoreDisplay->AddComponent(new ScoreUpdater());
+
 	// Player
 	Object* player = ObjectManager::RegisterObject(new Object("Player"));
 	player->Position = {Application::WindowSize().x / 2.f, Application::WindowSize().y / 2.f};
@@ -64,7 +74,7 @@ int main()
 
 	// Enemy Spawner
 	Object* enemySpawner = ObjectManager::RegisterObject(new Object("EnemySpawner"));
-	enemySpawner->AddComponent(new EnemySpawner({ 1.f, {200.f, 200.f} }));
+	enemySpawner->AddComponent(new EnemySpawner({ {200.f, 200.f} }));
 
 	Object* circle = new Object("Circle");
 	circle->Position = { 400.0f, 300.0f };

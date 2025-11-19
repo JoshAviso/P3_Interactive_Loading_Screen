@@ -14,7 +14,12 @@
 
 #include <Components/Update/MouseDetectScript.h>
 
-class CharacterController : public IUpdateComponent, public ILeftClickInputCallback
+#include <Components/Interfaces/ICollider.h>
+
+#include <Components/Update/ScoreUpdater.h>
+#include <Components/Update/EnemySpawner.h>
+
+class CharacterController : public IUpdateComponent, public ILeftClickInputCallback, public ICollider
 {
 public:
 	struct Desc {
@@ -28,10 +33,15 @@ public:
 
 private:
 	List<Object*> _bullets;
+	ScoreUpdater* _score;
+	EnemySpawner* _spawner;
 
 	float _moveSpeed = 0.f;
 	Vec2 _screenEdgeMargin = {0.f, 0.f};
 	void Update(float deltaTime) {
+		if (_score == nullptr) _score = ObjectManager::FindObjectByName("ScoreDisplay")->GetComponent<ScoreUpdater>();
+		if (_spawner == nullptr) _spawner = ObjectManager::FindObjectByName("EnemySpawner")->GetComponent<EnemySpawner>();
+
 		HandleRotation();
 		HandleMovement(deltaTime);
 	}
@@ -79,7 +89,7 @@ private:
 	void SpawnBullet() {
 		Object* bullet = ObjectManager::RegisterObject(new Object("PlayerBullet"));
 		bullet->AddComponent(new RectangleRenderer({10.f, 5.f}))->RenderLayer = 8;
-		bullet->AddComponent(new BulletMover({ _moveSpeed * 1.5f, {15.f, 10.f} }));
+		bullet->AddComponent(new BulletMover({ _moveSpeed * 1.5f, {15.f, 10.f} , true}));
 		bullet->Position = _owner->Position;
 		bullet->Rotation = _owner->Rotation - 90.f;
 
@@ -87,10 +97,22 @@ private:
 		_bullets.push_back(bullet);
 	}
 
+	virtual void OnCollisionEnter(ICollider* other) override {
+		if (other->GetOwner()->Name == "Enemy") {
+			_owner->Position = {
+				Application::WindowSize().x / 2.f,
+				Application::WindowSize().y / 2.f
+			};
+			
+			if (_score) _score->Score = -1;
+			if (_spawner) _spawner->DisableEnemies();
+		}
+	};
+
 public:
 	void DisableBullets() {
 		for (int i = 0; i < _bullets.size(); i++) {
-			_bullets[i]->Enabled = false;
+			ObjectManager::RemoveObject(_bullets[i]);
 		}
 	}
 };

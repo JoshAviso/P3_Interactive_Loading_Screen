@@ -176,6 +176,8 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClInclude Include="src\Public\Components\Update\MouseDetectScript.h" />
     <ClInclude Include="src\Public\Components\Interfaces\IMouseHoverCallback.h" />
     <ClInclude Include="src\Public\Components\Interfaces\IMouseClickCallback.h" />
+    <ClInclude Include="src\Public\Components\Update\ScoreUpdater.h" />
+    <ClInclude Include="src\Public\Math\Random.h" />
     <ClInclude Include="src\Public\Input\IRightClickInputCallback.h" />
     <ClInclude Include="src\Public\Input\ILeftClickInputCallback.h" />
     <ClInclude Include="src\Public\Components\Update\FPSCounterUpdater.h" />
