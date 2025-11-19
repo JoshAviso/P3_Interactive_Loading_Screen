@@ -63,7 +63,7 @@ void ObjectManager::CheckCollisions()
 			if (a == b) continue;
 
 			if (b->_owner->Intersects(a->_owner->Position) || a->_owner->Intersects(b->_owner->Position)) {
-				if (b->_collisions[a] || b->_collisions[a]) {
+				if (b->_collisions[a] || a->_collisions[b]) {
 					a->OnCollisionContinue(b);
 					b->OnCollisionContinue(a);
 				}

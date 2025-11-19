@@ -13,7 +13,6 @@ private:
 	}
 
 	virtual void OnCollisionEnter(ICollider* other) override {
-		Logger::Log("Collision with " + other->GetOwner()->Name);
 		if (other->GetOwner()->Name == "Bullet") {
 			_owner->Enabled = false;
 		}

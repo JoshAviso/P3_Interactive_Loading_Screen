@@ -11,7 +11,9 @@
 
 #include <Components/Renderers/ShapeRenderers/RectangleRenderer.h>
 
-class BulletMover : public IUpdateComponent
+#include <Components/Interfaces/ICollider.h>
+
+class BulletMover : public IUpdateComponent, public ICollider
 {
 public:
 	struct Desc {
