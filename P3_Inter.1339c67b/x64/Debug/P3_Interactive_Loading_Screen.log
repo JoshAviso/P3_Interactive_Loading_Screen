@@ -1,7 +1,4 @@
 ﻿  main.cpp
-  CharacterController.cpp
-  ObjectManager.cpp
-  Generating Code...
   P3_Interactive_Loading_Screen.vcxproj -> C:\Users\Josh\repos\P3_Interactive_Loading_Screen\x64\Debug\P3_Interactive_Loading_Screen.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
@@ -13,7 +10,10 @@
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\BG4.jpg
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\BG5.jpg
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\dwa.png
+  C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\LoadedImage1.png
+  C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\LoadedImage2.png
+  C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\LoadedImage3.png
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\motoko.png
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\spike.png
   C:\Users\Josh\repos\P3_Interactive_Loading_Screen\Assets\Images\TestImage1.png
-  10 File(s) copied
+  13 File(s) copied
