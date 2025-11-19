@@ -7,6 +7,8 @@
 #include <Components/Update/IUpdateComponent.h>
 #include <Components/Renderers/IRenderer.h>
 
+class ICollider;
+
 class ObjectManager
 {
 public:
@@ -21,10 +23,15 @@ public:
 	static void RemoveObject(Object* obj);
 	static Object* FindObjectByName(const String& name);
 
+	static void RegisterCollider(ICollider* collider);
+	static void UnregisterCollider(ICollider* collider);
+
 private:
+	List<ICollider*> _colliders;
 	List<Unique<Object>> _objects;
 
 	void Update(float deltaTime);
+	void CheckCollisions();
 	void RenderObjectsTo(sf::RenderWindow& window);
 
 // SINGLETON

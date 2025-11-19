@@ -7,6 +7,26 @@
       "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Input\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\ICollider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Components\\Interfaces\\ICollider.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\ObjectManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Objects\\ObjectManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Objects\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Objects\\ObjectManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Objects\\ObjectManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\IMouseClickCallback.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Components\\Interfaces\\IMouseClickCallback.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -88,20 +108,8 @@
       "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Components\\Interfaces\\IMouseHoverCallback.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Objects\\ObjectManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Objects\\ObjectManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Objects\\Object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Renderers\\SpriteRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Components\\Renderers\\SpriteRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\IMouseClickCallback.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Components\\Interfaces\\IMouseClickCallback.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Math\\Vec2i.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -118,10 +126,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Update\\IUpdateComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Public\\Components\\Update\\IUpdateComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\ObjectManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|solutionrelative:src\\Private\\Objects\\ObjectManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1339C67B-3B06-4E61-BEC1-24BFC6F14026}|P3_Interactive_Loading_Screen.vcxproj|C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Update\\MouseDetectScript.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -163,7 +167,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 369,
-          "SelectedChildIndex": 40,
+          "SelectedChildIndex": 41,
           "Children": [
             {
               "$type": "Bookmark",
@@ -175,7 +179,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "ICollider.h",
+              "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\ICollider.h",
+              "RelativeDocumentMoniker": "src\\Public\\Components\\Interfaces\\ICollider.h",
+              "ToolTip": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\ICollider.h",
+              "RelativeToolTip": "src\\Public\\Components\\Interfaces\\ICollider.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-19T06:44:43.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "delete_scalar_size.cpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\delete_scalar_size.cpp",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\delete_scalar_size.cpp",
@@ -188,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "delete_scalar.cpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\delete_scalar.cpp",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\crt\\src\\vcruntime\\delete_scalar.cpp",
@@ -201,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "ImagePanning.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Update\\ImagePanning.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Components\\Update\\ImagePanning.cpp",
@@ -214,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "memory",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\memory",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\memory",
@@ -227,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "BulletMover.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Update\\BulletMover.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Update\\BulletMover.h",
@@ -240,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "Constants.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Math\\Constants.h",
               "RelativeDocumentMoniker": "src\\Public\\Math\\Constants.h",
@@ -253,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "CharacterController.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Update\\CharacterController.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Update\\CharacterController.h",
@@ -266,20 +283,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 4,
               "Title": "ObjectManager.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Objects\\ObjectManager.h",
               "RelativeDocumentMoniker": "src\\Public\\Objects\\ObjectManager.h",
               "ToolTip": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Objects\\ObjectManager.h",
               "RelativeToolTip": "src\\Public\\Objects\\ObjectManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-19T04:36:43.453Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "IShapeRenderer.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Renderers\\Shapes\\IShapeRenderer.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Components\\Renderers\\Shapes\\IShapeRenderer.cpp",
@@ -292,20 +309,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 3,
               "Title": "Object.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\Object.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Objects\\Object.cpp",
               "ToolTip": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\Object.cpp",
               "RelativeToolTip": "src\\Private\\Objects\\Object.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-19T04:40:13.911Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "MouseDetectScript.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Update\\MouseDetectScript.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Components\\Update\\MouseDetectScript.cpp",
@@ -318,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "MouseDetectScript.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Update\\MouseDetectScript.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Update\\MouseDetectScript.h",
@@ -331,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IMousePositionTracker.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Input\\IMousePositionTracker.h",
               "RelativeDocumentMoniker": "src\\Public\\Input\\IMousePositionTracker.h",
@@ -344,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 26,
               "Title": "IMouseHoverCallback.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\IMouseHoverCallback.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Interfaces\\IMouseHoverCallback.h",
@@ -357,20 +374,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 5,
               "Title": "IMouseClickCallback.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\IMouseClickCallback.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Interfaces\\IMouseClickCallback.h",
               "ToolTip": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Interfaces\\IMouseClickCallback.h",
               "RelativeToolTip": "src\\Public\\Components\\Interfaces\\IMouseClickCallback.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-19T04:12:31.414Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "IUpdateComponent.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Update\\IUpdateComponent.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Update\\IUpdateComponent.h",
@@ -383,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "ImagePanning.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Update\\ImagePanning.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Update\\ImagePanning.h",
@@ -396,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "Object.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Objects\\Object.h",
               "RelativeDocumentMoniker": "src\\Public\\Objects\\Object.h",
@@ -409,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "CircleRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\ShapeRenderers\\CircleRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\ShapeRenderers\\CircleRenderer.h",
@@ -422,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "PolygonRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\ShapeRenderers\\PolygonRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\ShapeRenderers\\PolygonRenderer.h",
@@ -435,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "RectangleRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\ShapeRenderers\\RectangleRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\ShapeRenderers\\RectangleRenderer.h",
@@ -448,7 +465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "IShapeRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\ShapeRenderers\\IShapeRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\ShapeRenderers\\IShapeRenderer.h",
@@ -461,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "TriangleRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\ShapeRenderers\\TriangleRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\ShapeRenderers\\TriangleRenderer.h",
@@ -474,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "TextRenderer.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Renderers\\TextRenderer.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Components\\Renderers\\TextRenderer.cpp",
@@ -487,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "TextRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\TextRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\TextRenderer.h",
@@ -500,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "SpriteRenderer.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Renderers\\SpriteRenderer.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Components\\Renderers\\SpriteRenderer.cpp",
@@ -513,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "SpriteRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\SpriteRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\SpriteRenderer.h",
@@ -526,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "IRenderer.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Components\\Renderers\\IRenderer.h",
               "RelativeDocumentMoniker": "src\\Public\\Components\\Renderers\\IRenderer.h",
@@ -539,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "FPSCounterUpdater.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Components\\Update\\FPSCounterUpdater.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Components\\Update\\FPSCounterUpdater.cpp",
@@ -552,7 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
@@ -565,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Vec2i.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Math\\Vec2i.h",
               "RelativeDocumentMoniker": "src\\Public\\Math\\Vec2i.h",
@@ -578,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "Vec2.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Math\\Vec2.h",
               "RelativeDocumentMoniker": "src\\Public\\Math\\Vec2.h",
@@ -591,20 +608,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 2,
               "Title": "ObjectManager.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\ObjectManager.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Objects\\ObjectManager.cpp",
               "ToolTip": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Objects\\ObjectManager.cpp",
               "RelativeToolTip": "src\\Private\\Objects\\ObjectManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAYwFQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-19T01:37:44.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "IRightClickInputCallback.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Input\\IRightClickInputCallback.h",
               "RelativeDocumentMoniker": "src\\Public\\Input\\IRightClickInputCallback.h",
@@ -617,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "ILeftClickInputCallback.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Input\\ILeftClickInputCallback.h",
               "RelativeDocumentMoniker": "src\\Public\\Input\\ILeftClickInputCallback.h",
@@ -630,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Application.cpp",
               "RelativeDocumentMoniker": "src\\Private\\Application.cpp",
@@ -643,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 24,
               "Title": "Application.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Application.h",
               "RelativeDocumentMoniker": "src\\Public\\Application.h",
@@ -656,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Input.h",
               "DocumentMoniker": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Public\\Input\\Input.h",
               "RelativeDocumentMoniker": "src\\Public\\Input\\Input.h",
@@ -675,7 +692,7 @@
               "RelativeDocumentMoniker": "src\\Private\\Input\\Input.cpp",
               "ToolTip": "C:\\Users\\Josh\\repos\\P3_Interactive_Loading_Screen\\src\\Private\\Input\\Input.cpp",
               "RelativeToolTip": "src\\Private\\Input\\Input.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAawB8AAAALAAAAAAAAAA==",
+              "ViewState": "AgIAANEAAAAAAAAAAAAnwOkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-19T01:22:41.469Z",
               "EditorCaption": ""

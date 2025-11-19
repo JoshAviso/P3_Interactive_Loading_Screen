@@ -168,6 +168,7 @@ xcopy "$(ProjectDir)Assets" "$(TargetDir)Assets" /E /Y /I </Command>
     <ClCompile Include="src\Private\Objects\Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Public\Components\Interfaces\ICollider.h" />
     <ClInclude Include="src\Public\Components\Update\BulletMover.h" />
     <ClInclude Include="src\Public\Components\Update\CharacterController.h" />
     <ClInclude Include="src\Public\Components\Update\MouseDetectScript.h" />

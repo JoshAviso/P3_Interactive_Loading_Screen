@@ -226,11 +226,11 @@ void Input::RegisterRightClickCallback(IRightClickInputCallback* callback)
 {
 	_instance->_rightClickCallbacks.push_back(callback);
 }
-void Input::UnregisterLeftClickCallback(ILeftClickInputCallback* callback)  
+void Input::UnregisterRightClickCallback(IRightClickInputCallback* callback)
 {  
-   auto it = std::find(_instance->_leftClickCallbacks.begin(), _instance->_leftClickCallbacks.end(), callback);  
-   if (it != _instance->_leftClickCallbacks.end()) {  
-       _instance->_leftClickCallbacks.erase(it);  
+   auto it = std::find(_instance->_rightClickCallbacks.begin(), _instance->_rightClickCallbacks.end(), callback);
+   if (it != _instance->_rightClickCallbacks.end()) {
+       _instance->_rightClickCallbacks.erase(it);
    }  
 }
 

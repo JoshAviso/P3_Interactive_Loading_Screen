@@ -2,6 +2,8 @@
 
 #include <algorithm>
 
+#include <Components/Interfaces/ICollider.h>
+
 void ObjectManager::RemoveObject(Object* obj)
 {
 	auto it = std::find_if(_instance->_objects.begin(), _instance->_objects.end(),
@@ -22,6 +24,21 @@ Object* ObjectManager::FindObjectByName(const String& name)
     return nullptr;
 }
 
+void ObjectManager::RegisterCollider(ICollider* collider)
+{
+	if (collider == nullptr) return;
+	_instance->_colliders.push_back(collider);
+}
+void ObjectManager::UnregisterCollider(ICollider* collider)  
+{  
+   if (collider == nullptr) return;  
+
+   auto it = std::find(_instance->_colliders.begin(), _instance->_colliders.end(), collider);  
+   if (it != _instance->_colliders.end()) {  
+       _instance->_colliders.erase(it);  
+   }  
+}
+
 void ObjectManager::Update(float deltaTime)
 {
 	for (int i = 0; i < _objects.size(); i++)
@@ -31,6 +48,42 @@ void ObjectManager::Update(float deltaTime)
 		for (int j = 0; j < updateComponents.size(); j++)
 		{
 			updateComponents[j]->Update(deltaTime);
+		}
+	}
+
+	CheckCollisions();
+}
+
+void ObjectManager::CheckCollisions()
+{
+	for (int i = 0; i < _colliders.size(); i++) {
+		ICollider* a = _colliders[i];
+		for (int j = i + 1; j < _colliders.size(); j++) {
+			ICollider* b = _colliders[j];
+			if (a == b) continue;
+
+			if (b->_owner->Intersects(a->_owner->Position) || a->_owner->Intersects(b->_owner->Position)) {
+				if (b->_collisions[a] || b->_collisions[a]) {
+					a->OnCollisionContinue(b);
+					b->OnCollisionContinue(a);
+				}
+				else {
+					a->OnCollisionEnter(b);
+					b->OnCollisionEnter(a);
+				}
+
+				b->_collisions[a] = true;
+				a->_collisions[b] = true;
+			}
+			else {
+				if (b->_collisions[a] || b->_collisions[a]) {
+					a->OnCollisionExit(b);
+					b->OnCollisionExit(a);
+				}
+
+				b->_collisions[a] = false;
+				a->_collisions[b] = false;
+			}
 		}
 	}
 }
